@@ -1,0 +1,178 @@
+---
+/**
+ * Privacy Policy
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../config/site';
+import partners from '../data/partners.json';
+---
+<PageLayout
+  title={`Privacy Policy | ${siteConfig.siteName}`}
+  description={`Privacy policy for ${siteConfig.siteName}, operated by ${siteConfig.companyName}.`}
+  breadcrumbs={[{ label: 'Privacy Policy', href: '/privacy/' }]}
+>
+  <article class="py-8 prose">
+    <h1>Privacy Policy</h1>
+
+    <p><strong>Last Updated:</strong> April 2026</p>
+
+    <p>
+      {siteConfig.siteName} ("we," "us," or "our") is operated by {siteConfig.companyName}. This Privacy Policy describes how we collect, use, share, and protect the personal information of visitors to our website at <a href={siteConfig.siteUrl}>{siteConfig.siteUrl}</a> (the "Site"). By using our Site, you agree to the practices described in this policy.
+    </p>
+
+    <p>
+      Our Site connects prospective homebuyers in San Diego County with licensed mortgage professionals. We are not a lender, broker, or financial advisor. When you submit information through our forms and tools, that information may be shared with third-party mortgage professionals as described below.
+    </p>
+
+    <!-- ============================================================ -->
+    <h2>1. Information We Collect</h2>
+
+    <h3>Information You Provide Directly</h3>
+    <p>When you use our contact forms, readiness quiz, or other interactive tools, we may collect the following personal information:</p>
+    <ul>
+      <li>Full name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>ZIP code</li>
+      <li>Estimated annual household income range</li>
+      <li>Estimated credit score range</li>
+      <li>Estimated down payment range</li>
+      <li>Loan type(s) of interest (e.g., FHA, VA, Conventional)</li>
+      <li>First-time homebuyer status</li>
+      <li>Military or veteran status</li>
+      <li>Homebuying timeline</li>
+    </ul>
+
+    <h3>Information Collected Automatically</h3>
+    <p>When you visit the Site, we automatically collect certain technical and usage data, including:</p>
+    <ul>
+      <li><strong>IP address</strong> and approximate geographic location</li>
+      <li><strong>Browser type and version,</strong> operating system, device type, and screen resolution</li>
+      <li><strong>Usage data</strong> such as pages visited, time spent on pages, referring URLs, and click patterns</li>
+      <li><strong>Cookies and similar technologies</strong> used by our analytics and security providers</li>
+    </ul>
+    <p>This data is collected through Google Analytics 4 (GA4) and Cloudflare Web Analytics. See Section 4 below for details on these providers.</p>
+
+    <!-- ============================================================ -->
+    <h2>2. How We Use Your Information</h2>
+    <p>We use the information we collect for the following purposes:</p>
+    <ul>
+      <li><strong>To match you with mortgage professionals:</strong> Your contact information and financial profile data are used to connect you with licensed mortgage professionals who may be able to assist you. This is the primary purpose of data collection on our Site.</li>
+      <li><strong>To communicate about your inquiry:</strong> We may contact you by email or phone to confirm your submission, provide additional resources, or follow up on your request.</li>
+      <li><strong>To improve our tools and content:</strong> We use aggregated and anonymized usage data to improve our calculators, guides, and educational resources.</li>
+      <li><strong>For analytics and performance monitoring:</strong> We use analytics data to understand how visitors use the Site, identify technical issues, and optimize performance.</li>
+      <li><strong>For security and fraud prevention:</strong> We use Cloudflare Turnstile and other measures to prevent spam submissions and protect the integrity of our services.</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2>3. How We Share Your Information</h2>
+    <p>
+      <strong>We share and may sell your personal information with third-party licensed mortgage professionals.</strong> This is a core function of our Site. When you submit your information through our readiness quiz, contact form, or other lead-generation tools, we share the following data with one or more participating mortgage professionals:
+    </p>
+    <ul>
+      <li>Your name, email address, and phone number</li>
+      <li>Your ZIP code</li>
+      <li>Financial qualification data you provided, including income range, credit score range, down payment range, loan type interest, first-time buyer status, military status, and homebuying timeline</li>
+    </ul>
+    <p>
+      These professionals are independent third parties. Once your information has been shared with a mortgage professional, that professional's own privacy policy governs their use, storage, and protection of your data. We encourage you to review the privacy policy of any professional who contacts you.
+    </p>
+
+    <h3>Recipients</h3>
+    <p>The Community Partners who may receive your information are:</p>
+    <ul>
+      {partners.map((p) => (
+        <li>
+          <strong>{p.name}</strong> (NMLS #{p.nmls}), {p.legalEntityName} (Entity NMLS #{p.entityNmls}), {p.address}
+        </li>
+      ))}
+    </ul>
+
+    <p>
+      We do not share your information with the other Community Partners you did not select, with any other mortgage professional, with a network or aggregator of lenders, or with marketing partners for purposes of mortgage solicitation.
+    </p>
+
+    <p>
+      We do not control and are not responsible for the privacy practices of third-party mortgage professionals who receive your information. {siteConfig.compensationDisclosure}
+    </p>
+
+    <!-- ============================================================ -->
+    <h2>4. Third-Party Service Providers</h2>
+    <p>We use the following third-party service providers in the operation of our Site:</p>
+    <ul>
+      <li><strong>Cloudflare:</strong> Provides website hosting (Cloudflare Pages), DNS, DDoS protection, web application firewall, Cloudflare Web Analytics, and Cloudflare Turnstile (anti-spam/bot verification). Cloudflare may process your IP address and browser information. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's Privacy Policy</a>.</li>
+      <li><strong>Google Analytics (GA4):</strong> We use Google Analytics 4 to collect anonymized usage statistics about how visitors interact with our Site. Google may use cookies and collect IP addresses. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
+      <li><strong>Webhook automation provider:</strong> When you submit a form, your data is transmitted to our backend systems via webhook. This data transfer is secured using HTTPS and HMAC signature verification to ensure data integrity.</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2 id="do-not-sell">5. Your California Privacy Rights (CCPA)</h2>
+    <p>
+      If you are a California resident, the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA), provides you with specific rights regarding your personal information:
+    </p>
+    <ul>
+      <li><strong>Right to Know:</strong> You have the right to request that we disclose the categories and specific pieces of personal information we have collected about you, the categories of sources from which it was collected, the business purpose for collecting or selling it, and the categories of third parties with whom we share it.</li>
+      <li><strong>Right to Delete:</strong> You have the right to request that we delete the personal information we have collected from you, subject to certain exceptions permitted by law.</li>
+      <li><strong>Right to Opt-Out of Sale/Sharing:</strong> You have the right to opt out of the sale or sharing of your personal information. As described in Section 3, we share your personal information with third-party mortgage professionals, which may constitute a "sale" or "sharing" under the CCPA. See the "Do Not Sell My Personal Information" section below for instructions on how to opt out.</li>
+      <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
+    </ul>
+    <p>
+      To exercise any of these rights, please contact us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>. We will verify your identity before processing your request. We will respond to verifiable consumer requests within 45 calendar days of receipt. If we require additional time (up to an additional 45 days), we will inform you of the reason and the extension period in writing.
+    </p>
+
+    <h3>Do Not Sell My Personal Information</h3>
+    <p>
+      Under the CCPA, the sharing of your contact and financial profile data with third-party mortgage professionals — as described in Section 3 of this policy — may constitute a "sale" of personal information. We want to be transparent about this practice. We honor Global Privacy Control (GPC) signals automatically.
+    </p>
+    <p>
+      <strong>You have the right to opt out of this sale/sharing.</strong> To exercise this right, please email us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a> with the subject line "Do Not Sell My Personal Information." Include the name and email address associated with your submission so we can locate your records.
+    </p>
+    <p>
+      If you opt out, we will not share any future form submissions with third-party mortgage professionals. Please note that opting out does not affect data that has already been shared prior to your request. If you have already been contacted by a mortgage professional, you will need to contact that professional directly regarding their use of your information.
+    </p>
+
+    <!-- ============================================================ -->
+    <h2>6. Data Retention</h2>
+    <p>
+      We retain lead data — including your name, contact information, and financial profile data submitted through our forms — for a period of <strong>24 months</strong> from the date of submission. After this retention period, your personal information is permanently deleted from our systems.
+    </p>
+    <p>
+      Analytics data collected via Google Analytics and Cloudflare Web Analytics is retained according to the default retention policies of those respective services. We do not independently store raw analytics data beyond what these providers retain.
+    </p>
+
+    <!-- ============================================================ -->
+    <h2>7. Data Security</h2>
+    <p>We implement reasonable technical and organizational measures to protect your personal information, including:</p>
+    <ul>
+      <li><strong>HTTPS encryption:</strong> All data transmitted between your browser and our Site is encrypted using TLS/SSL.</li>
+      <li><strong>Cloudflare security:</strong> Our Site is protected by Cloudflare's web application firewall, DDoS mitigation, and bot management services.</li>
+      <li><strong>Database encryption:</strong> Lead data stored in our Cloudflare D1 database is encrypted at rest.</li>
+      <li><strong>Webhook verification:</strong> Data transmitted via webhooks is verified using HMAC signatures to prevent tampering and unauthorized access.</li>
+    </ul>
+    <p>
+      While we strive to protect your personal information, no method of transmission over the Internet or method of electronic storage is 100% secure. We cannot guarantee absolute security.
+    </p>
+
+    <!-- ============================================================ -->
+    <h2>8. Children's Privacy</h2>
+    <p>
+      Our Site is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to promptly delete that information. If you believe that a child under 13 has provided us with personal information, please contact us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
+    </p>
+
+    <!-- ============================================================ -->
+    <h2>9. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will update the "Last Updated" date at the top of this page. We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
+    </p>
+
+    <!-- ============================================================ -->
+    <h2>10. Contact Us</h2>
+    <p>
+      If you have questions or concerns about this Privacy Policy or our data practices, please contact us:
+    </p>
+    <ul>
+      <li><strong>Email:</strong> <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a></li>
+      <li><strong>Organization:</strong> {siteConfig.companyName}</li>
+    </ul>
+  </article>
+</PageLayout>

@@ -1,0 +1,31 @@
+---
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  dateModified: string;
+  authorName?: string;
+  authorCredential?: string;
+}
+
+const {
+  dateModified,
+  authorName = siteConfig.editorialAuthor.name,
+  authorCredential = siteConfig.editorialAuthor.credential,
+} = Astro.props;
+
+const formattedDate = new Date(dateModified).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-body-sm text-neutral-500">
+  <span>
+    Reviewed by <strong class="text-neutral-700">{authorName}</strong>
+    {authorCredential && authorCredential !== '[EDITORIAL_AUTHOR_CREDENTIAL]' && (
+      <>, {authorCredential}</>
+    )}
+  </span>
+  <span aria-hidden="true">|</span>
+  <time datetime={dateModified}>Updated {formattedDate}</time>
+</div>

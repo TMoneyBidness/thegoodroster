@@ -1,0 +1,66 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../config/site';
+import ToolCTA from '../components/cta/ToolCTA.astro';
+---
+<PageLayout
+  title={`Thank You | ${siteConfig.siteName}`}
+  description="Thank you for your submission. Here's what happens next."
+  noindex={true}
+>
+  <div class="py-12 max-w-2xl mx-auto text-center">
+    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+
+    <h1 class="text-h1 font-bold text-neutral-900 mb-4">Thank you for reaching out</h1>
+    <p class="text-body-lg text-neutral-600 mb-8">
+      Your information has been submitted. Here's what happens next.
+    </p>
+
+    <!-- What happens next -->
+    <div class="text-left bg-neutral-50 rounded-xl p-8 mb-8">
+      <h2 class="text-h3 font-semibold text-neutral-800 mb-4">What happens next</h2>
+      <ol class="space-y-4">
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-body-sm">1</span>
+          <div>
+            <p class="font-medium text-neutral-800">We forward your information</p>
+            <p class="text-body-sm text-neutral-500">Your details are shared with a local mortgage professional from our {siteConfig.partnerTerminology.toLowerCase()} network.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-body-sm">2</span>
+          <div>
+            <p class="font-medium text-neutral-800">A professional reaches out</p>
+            <p class="text-body-sm text-neutral-500">Expect to hear from them within 1 business day, usually much sooner.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-body-sm">3</span>
+          <div>
+            <p class="font-medium text-neutral-800">You explore your options</p>
+            <p class="text-body-sm text-neutral-500">The professional will discuss your situation, answer questions, and help you understand your options. No obligation.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- While you wait -->
+    <h2 class="text-h3 font-semibold text-neutral-800 mb-4">While you wait, explore these resources</h2>
+    <div class="grid md:grid-cols-2 gap-4 text-left">
+      <ToolCTA
+        title="First-Time Buyer Guide"
+        description="Our complete guide to buying your first home in San Diego"
+        href="/first-time-homebuyer-san-diego/"
+      />
+      <ToolCTA
+        title="Down Payment Assistance"
+        description="Learn about programs that could help with your down payment"
+        href="/down-payment-assistance-san-diego/"
+      />
+    </div>
+  </div>
+</PageLayout>

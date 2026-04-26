@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Option B — Light Navy + Gold (Banking/Finance)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8FAFC;
+    --bg-white: #FFFFFF;
+    --bg-warm: #F1F5F9;
+    --primary: #0F172A;
+    --primary-mid: #1E3A8A;
+    --primary-light: #3B82F6;
+    --cta: #CA8A04;
+    --cta-hover: #A16207;
+    --cta-light: #FEF3C7;
+    --text: #020617;
+    --text-muted: #475569;
+    --text-dim: #94A3B8;
+    --border: #E2E8F0;
+    --border-hover: #CBD5E1;
+    --success: #16A34A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Work Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  /* === DISCLAIMER BAR === */
+  .disclaimer-bar {
+    background: var(--primary);
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #94A3B8;
+  }
+  .disclaimer-bar span {
+    color: var(--cta);
+    font-weight: 600;
+  }
+
+  /* === HEADER === */
+  header {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: 0 24px;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 150ms;
+  }
+  nav a:hover { color: var(--primary); background: var(--bg-warm); }
+  nav a.active { color: var(--primary-mid); background: #EFF6FF; }
+  .header-cta {
+    background: var(--cta);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 150ms;
+  }
+  .header-cta:hover { background: var(--cta-hover); transform: translateY(-1px); }
+
+  /* === HERO === */
+  .hero {
+    padding: 80px 24px 60px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg) 100%);
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-mid), var(--cta), var(--primary-mid));
+  }
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--cta-light);
+    border: 1px solid #FDE68A;
+    color: var(--cta-hover);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--cta);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    color: var(--primary);
+  }
+  .hero h1 .accent {
+    color: var(--primary-mid);
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 36px;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--cta);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 200ms;
+    box-shadow: 0 2px 8px rgba(202, 138, 4, 0.25);
+  }
+  .btn-primary:hover { background: var(--cta-hover); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(202, 138, 4, 0.3); }
+  .btn-secondary {
+    background: var(--bg-white);
+    color: var(--primary);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--border);
+    transition: all 200ms;
+  }
+  .btn-secondary:hover { border-color: var(--primary-mid); color: var(--primary-mid); transform: translateY(-1px); }
+
+  /* === STATS === */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 60px auto 0;
+  }
+  .stat {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all 200ms;
+  }
+  .stat:hover { border-color: var(--primary-mid); box-shadow: 0 4px 12px rgba(0,0,0,0.06); transform: translateY(-2px); }
+  .stat-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-mid);
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .stat-source {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  /* === PATHWAY CARDS === */
+  .pathways {
+    padding: 80px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .pathways h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  .pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .pathway-card {
+    background: var(--bg-white);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 200ms;
+    cursor: pointer;
+    text-align: center;
+  }
+  .pathway-card:hover {
+    border-color: var(--primary-mid);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  }
+  .pathway-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 22px;
+  }
+  .pathway-card:nth-child(1) .pathway-icon { background: #EFF6FF; color: var(--primary-mid); }
+  .pathway-card:nth-child(2) .pathway-icon { background: var(--cta-light); color: var(--cta); }
+  .pathway-card:nth-child(3) .pathway-icon { background: #F0FDF4; color: var(--success); }
+  .pathway-card h3 { font-size: 18px; margin-bottom: 8px; }
+  .pathway-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* === TOOLS === */
+  .tools {
+    padding: 60px 24px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tools h2 { text-align: center; font-size: 28px; margin-bottom: 12px; }
+  .tools .subtitle { text-align: center; color: var(--text-muted); margin-bottom: 40px; font-size: 16px; }
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .tool-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 200ms;
+    display: flex;
+    align-items: start;
+    gap: 14px;
+  }
+  .tool-card:hover { border-color: var(--cta); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .tool-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #EFF6FF;
+    color: var(--primary-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .tool-card h3 { font-size: 15px; margin-bottom: 4px; }
+  .tool-card p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+  /* === ABOUT === */
+  .about {
+    padding: 60px 24px;
+    text-align: center;
+    background: var(--bg-white);
+    border-top: 1px solid var(--border);
+  }
+  .about-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .about h2 { font-size: 24px; margin-bottom: 12px; }
+  .about p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 8px; }
+  .about .disclosure { font-size: 13px; color: var(--text-dim); }
+
+  @media (max-width: 768px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .pathway-grid, .tool-grid { grid-template-columns: 1fr; }
+    nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-bar">
+  <span>TheGoodRoster</span> is not a mortgage lender, broker, or loan originator. We connect homebuyers with licensed professionals.
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      </div>
+      TheGoodRoster
+    </a>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">First-Time Buyers</a>
+      <a href="#">Loan Programs</a>
+      <a href="#">DPA Help</a>
+      <a href="#">Tools</a>
+      <a href="#">Guides</a>
+    </nav>
+    <a href="#" class="header-cta">Find a Pro</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">San Diego First-Time Buyer Resource</div>
+    <h1>Your first home in San Diego,<br><span class="accent">made possible</span></h1>
+    <p>Guides, calculators, and DPA matching — built for San Diego's market. Connect with licensed local professionals when you're ready.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn-primary">Take the 60-Second Quiz</a>
+      <a href="#" class="btn-secondary">Browse Loan Programs</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">$150K</div>
+        <div class="stat-label">Max DPA available</div>
+        <div class="stat-source">CalHFA Dream For All</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">$1.08M</div>
+        <div class="stat-label">FHA loan limit (SD)</div>
+        <div class="stat-source">HUD, 2026</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">3.5%</div>
+        <div class="stat-label">Min FHA down payment</div>
+        <div class="stat-source">580+ credit score</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">7+</div>
+        <div class="stat-label">DPA programs in SD</div>
+        <div class="stat-source">City, County & State</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pathways">
+  <h2>Where are you in your journey?</h2>
+  <div class="pathway-grid">
+    <a href="#" class="pathway-card">
+      <div class="pathway-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+      <h3>I'm just exploring</h3>
+      <p>Learn what it takes to buy your first home in San Diego's million-dollar market</p>
+    </a>
+    <a href="#" class="pathway-card">
+      <div class="pathway-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <h3>I need down payment help</h3>
+      <p>Discover up to $150,000 in assistance programs you probably qualify for</p>
+    </a>
+    <a href="#" class="pathway-card">
+      <div class="pathway-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+      <h3>I'm ready to talk to a pro</h3>
+      <p>Connect directly with a licensed San Diego mortgage professional</p>
+    </a>
+  </div>
+</section>
+
+<section class="tools">
+  <h2>Free tools built for San Diego</h2>
+  <p class="subtitle">Interactive calculators with local property tax, Mello-Roos, and insurance data</p>
+  <div class="tool-grid">
+    <a href="#" class="tool-card">
+      <div class="tool-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+      <div><h3>Mortgage Calculator</h3><p>Monthly payment with SD property tax, Mello-Roos, and HOA</p></div>
+    </a>
+    <a href="#" class="tool-card">
+      <div class="tool-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+      <div><h3>Affordability Calculator</h3><p>How much home you can afford based on your income and debts</p></div>
+    </a>
+    <a href="#" class="tool-card">
+      <div class="tool-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div><h3>Closing Cost Estimator</h3><p>Itemized breakdown of what you'll pay at closing</p></div>
+    </a>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-inner">
+    <h2>Built for San Diego first-time buyers</h2>
+    <p>TheGoodRoster helps first-time homebuyers in San Diego understand their options and connect with licensed local mortgage professionals when they're ready.</p>
+    <p class="disclosure">We are not a lender. We may receive compensation when you connect with a listed professional.</p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  text?: string;
+  href?: string;
+  size?: 'default' | 'large';
+  variant?: 'primary' | 'accent';
+}
+
+const {
+  text = 'Take the 60-Second Homebuyer Quiz',
+  href = '/tools/mortgage-calculator/',
+  size = 'default',
+  variant = 'primary',
+} = Astro.props;
+---
+<a
+  href={href}
+  class:list={[
+    'no-underline',
+    size === 'large' ? 'px-8 py-4 text-body-lg' : 'px-6 py-3 text-body',
+    variant === 'accent'
+      ? 'btn-accent'
+      : 'btn-primary',
+  ]}
+>
+  {text}
+  <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+  </svg>
+</a>

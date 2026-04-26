@@ -1,0 +1,97 @@
+---
+import { siteConfig } from '../../config/site';
+
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-primary-900 text-primary-200 pt-16 pb-8">
+  <div class="container-content">
+    <!-- Footer nav grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <!-- About -->
+      <div>
+        <h3 class="text-accent-300 font-semibold text-body mb-4">About</h3>
+        <ul class="space-y-2">
+          {siteConfig.footerNav.about.map((item) => (
+            <li>
+              <a href={item.href} class="text-body-sm text-primary-200 hover:text-accent-300 transition-colors no-underline">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h3 class="text-accent-300 font-semibold text-body mb-4">Resources</h3>
+        <ul class="space-y-2">
+          {siteConfig.footerNav.resources.map((item) => (
+            <li>
+              <a href={item.href} class="text-body-sm text-primary-200 hover:text-accent-300 transition-colors no-underline">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div>
+        <h3 class="text-accent-300 font-semibold text-body mb-4">Tools</h3>
+        <ul class="space-y-2">
+          {siteConfig.footerNav.tools.map((item) => (
+            <li>
+              <a href={item.href} class="text-body-sm text-primary-200 hover:text-accent-300 transition-colors no-underline">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-accent-300 font-semibold text-body mb-4">Legal</h3>
+        <ul class="space-y-2">
+          {siteConfig.footerNav.legal.map((item) => (
+            <li>
+              <a href={item.href} class="text-body-sm text-primary-200 hover:text-accent-300 transition-colors no-underline">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-primary-700 pt-8">
+      <!-- Footer disclosure (doctrine §20 sequence: value → control → not-a-lender → compensation) -->
+      <div class="mb-6 p-4 bg-primary-800 rounded-lg text-body-sm text-primary-300 space-y-2">
+        <p>
+          <strong class="text-accent-300">Free local guides, tools, and a small roster of licensed mortgage professionals.</strong>
+        </p>
+        <p>
+          You choose who to contact. Your inquiry goes only to that person.
+        </p>
+        <p>
+          TheGoodRoster is not a mortgage lender, broker, or loan originator.
+        </p>
+        <p class="text-primary-400">
+          Some listed professionals pay to participate. Compensation does not decide who you contact.
+        </p>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-body-sm text-primary-400">
+        <p>&copy; {currentYear} {siteConfig.companyName}. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <!-- Equal Housing Opportunity placeholder -->
+          <span class="text-xs" title="Equal Housing Opportunity">
+              Equal Housing Opportunity
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

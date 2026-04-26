@@ -1,0 +1,40 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_BIA_NAME: "SDHomeStart"
+      PUBLIC_BIA_DISTRICT: "San Diego"
+      PUBLIC_SITE_URL: "https://sdhomestart.org"
+      PUBLIC_SITE_NAME: "SDHomeStart"
+      PUBLIC_EDITORIAL_AUTHOR_NAME: "SDHomeStart Team"
+      PUBLIC_EDITORIAL_AUTHOR_CREDENTIAL: ""
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --run
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

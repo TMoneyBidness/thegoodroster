@@ -1,0 +1,62 @@
+---
+/**
+ * Disclaimers Page
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../config/site';
+---
+<PageLayout
+  title={`Disclaimers | ${siteConfig.siteName}`}
+  description={`Important disclaimers about ${siteConfig.siteName} and the information provided.`}
+  breadcrumbs={[{ label: 'Disclaimers', href: '/disclaimers/' }]}
+>
+  <article class="py-8 prose">
+    <h1>Disclaimers</h1>
+
+    <h2>General disclaimer</h2>
+    <p>
+      {siteConfig.notALenderDisclaimer} Information provided is for educational purposes only and should not be considered financial advice.
+    </p>
+
+    <h2>Compensation disclosure</h2>
+    <p>
+      {siteConfig.compensationDisclosure} Each Community Partner pays a flat marketing fee per inquiry, regardless of whether a loan closes. This fee is for advertising and directory placement and is not contingent on any settlement service. We do not steer, rank, or rotate inquiries based on which Community Partner pays more.
+    </p>
+    <p>
+      Our listing of mortgage professionals does not constitute
+      an endorsement or recommendation of any specific professional. See our <a href="/privacy/">Privacy Policy</a>
+      for details on how your information is shared.
+    </p>
+
+    <h2>Educational content</h2>
+    <p>
+      All information on this site is provided for educational purposes only and should not
+      be considered financial, legal, or tax advice. Loan program details, eligibility
+      requirements, income limits, and other information may change without notice.
+      Always verify current program details with the administering agency or a licensed
+      mortgage professional.
+    </p>
+
+    <h2>Interactive tools</h2>
+    <p>
+      {siteConfig.toolDisclaimer} Calculators and estimators use simplified formulas and
+      default assumptions that may not reflect your specific situation. Results should be
+      used for planning purposes only. A licensed mortgage professional can provide
+      accurate figures based on your circumstances.
+    </p>
+
+    <h2>Listed professionals</h2>
+    <p>
+      {siteConfig.partnerDisclaimer} Mortgage professionals listed on this site are independent
+      licensees. You are not required to use any listed professional.
+    </p>
+    <p>
+      When you submit an inquiry, your contact information goes only to the one Community Partner you select — never to a network, never to multiple lenders, and never to marketing partners.
+    </p>
+
+    <h2>Equal housing</h2>
+    <p>
+      {siteConfig.siteName} supports fair housing practices.
+    </p>
+  </article>
+</PageLayout>

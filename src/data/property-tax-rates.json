@@ -1,0 +1,81 @@
+{
+  "lastUpdated": "2026-04-15",
+  "county": "San Diego County",
+  "state": "California",
+  "source": "San Diego County Assessor, Prop 13 (California Constitution Article XIIIA)",
+  "components": {
+    "baseRate": {
+      "rate": 1.0,
+      "description": "Proposition 13 base rate — 1% of assessed value",
+      "notes": "Assessed value is set at the purchase price and can only increase by a maximum of 2% per year under Prop 13. Reassessment to current market value occurs upon sale or new construction."
+    },
+    "voterApprovedBonds": {
+      "typicalRange": {
+        "low": 0.05,
+        "high": 0.30
+      },
+      "description": "Additional taxes from voter-approved general obligation bonds for schools, infrastructure, and community facilities",
+      "notes": "Varies by tax rate area (TRA). School bonds are the most common. These appear as separate line items on the tax bill."
+    },
+    "directAssessments": {
+      "typicalRange": {
+        "low": 100,
+        "high": 1500
+      },
+      "unit": "dollars_per_year",
+      "description": "Fixed-dollar assessments for services like flood control, vector control, library, fire, lighting, and landscaping districts",
+      "notes": "These are flat fees, not percentages. They vary by location and the districts your property falls within."
+    },
+    "melloRoos": {
+      "typicalRange": {
+        "low": 0,
+        "high": 5000
+      },
+      "unit": "dollars_per_year",
+      "description": "Community Facilities District (CFD) taxes — most common in newer developments and master-planned communities",
+      "notes": "Mello-Roos taxes fund infrastructure (roads, schools, parks, utilities) in new developments. They are a fixed annual amount, not based on assessed value, and typically last 25-40 years. Common in areas like Otay Ranch, Pacific Highlands Ranch, 4S Ranch, and San Marcos developments. Can add $2,000-$5,000+/year to your tax bill.",
+      "commonAreas": [
+        "Otay Ranch (Chula Vista)",
+        "Pacific Highlands Ranch (Carmel Valley)",
+        "4S Ranch",
+        "San Marcos new developments",
+        "Eastlake (Chula Vista)",
+        "Mission Valley redevelopment areas"
+      ]
+    }
+  },
+  "effectiveRates": {
+    "description": "Total effective property tax rate including base rate, bonds, and assessments (excluding Mello-Roos)",
+    "countyAverage": 1.25,
+    "byAreaType": [
+      {
+        "type": "older_neighborhood",
+        "label": "Older Established Neighborhood",
+        "effectiveRate": 1.10,
+        "melloRoosLikelihood": "none",
+        "typicalMelloRoos": 0,
+        "examples": ["North Park", "Hillcrest", "City Heights", "Clairemont", "La Mesa (older areas)"],
+        "notes": "Minimal voter-approved bond overlay. No Mello-Roos. These areas were built out before CFDs became common."
+      },
+      {
+        "type": "suburban",
+        "label": "Suburban / Mid-Age Development",
+        "effectiveRate": 1.25,
+        "melloRoosLikelihood": "low_to_moderate",
+        "typicalMelloRoos": 500,
+        "examples": ["Mira Mesa", "Scripps Ranch", "Rancho Penasquitos", "Santee", "El Cajon"],
+        "notes": "Moderate bond overlays. Some areas may have older Mello-Roos districts nearing expiration."
+      },
+      {
+        "type": "new_development",
+        "label": "New Master-Planned Development",
+        "effectiveRate": 1.55,
+        "melloRoosLikelihood": "high",
+        "typicalMelloRoos": 3500,
+        "examples": ["Otay Ranch", "Eastlake", "Pacific Highlands Ranch", "4S Ranch", "new San Marcos"],
+        "notes": "Higher bond overlays plus significant Mello-Roos (CFD) taxes. The effective rate shown includes an estimated Mello-Roos equivalent. Actual Mello-Roos amounts are fixed dollars, not percentages, but are shown here as an equivalent rate for comparison."
+      }
+    ]
+  },
+  "calculationNotes": "To estimate annual property taxes: (Purchase Price x Effective Rate) + Mello-Roos (if applicable) + Direct Assessments. Example: $700,000 home in Mira Mesa = $700,000 x 1.25% = $8,750/year. A $700,000 home in Otay Ranch = $700,000 x 1.10% + $3,500 Mello-Roos = $11,200/year."
+}

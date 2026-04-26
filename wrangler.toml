@@ -1,0 +1,25 @@
+# Root wrangler.toml — Cloudflare Pages project config
+# The lead-router Worker has its own wrangler.toml in workers/lead-router/
+
+name = "sdhomestart"
+compatibility_date = "2024-01-01"
+
+# Pages will use this for the Astro SSR adapter
+# D1 and KV bindings are configured here for Pages Functions
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sdhomestart-leads"
+database_id = "" # Set via CLOUDFLARE_D1_DATABASE_ID or wrangler CLI
+
+[[kv_namespaces]]
+binding = "CONFIG"
+id = "" # Set via Cloudflare dashboard
+
+[[kv_namespaces]]
+binding = "ROTATION_STATE"
+id = "" # Set via Cloudflare dashboard
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "sdhomestart-assets"

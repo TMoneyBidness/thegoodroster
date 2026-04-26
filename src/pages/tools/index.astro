@@ -1,0 +1,47 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig } from '../../config/site';
+import ToolCTA from '../../components/cta/ToolCTA.astro';
+---
+<PageLayout
+  title={`Free Homebuyer Tools | ${siteConfig.siteName}`}
+  description="Free mortgage calculator, affordability estimator, closing cost calculator, and DPA finder — all built with San Diego-specific data."
+  breadcrumbs={[{ label: 'Tools', href: '/tools/' }]}
+  wide={true}
+>
+  <div class="py-8">
+    <h1 class="text-h1 font-bold text-neutral-900 mb-3">Free Homebuyer Tools</h1>
+    <p class="text-body-lg text-neutral-600 mb-8 max-w-2xl">
+      Interactive calculators and tools built with San Diego-specific data. No account required.
+      All results are estimates for planning purposes only.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-3xl">
+      <ToolCTA
+        title="Mortgage Calculator"
+        description="Estimate your monthly payment with San Diego property tax rates, Mello-Roos, HOA, and insurance"
+        href="/tools/mortgage-calculator/"
+      />
+      <ToolCTA
+        title="Affordability Calculator"
+        description="Find out how much home you can comfortably afford based on your income, debts, and savings"
+        href="/tools/affordability-calculator/"
+      />
+      <ToolCTA
+        title="Closing Cost Estimator"
+        description="Get an itemized estimate of your San Diego closing costs by loan type"
+        href="/tools/closing-cost-estimator/"
+      />
+      <ToolCTA
+        title="DPA Finder"
+        description="Match with down payment assistance programs you may qualify for"
+        href="/tools/dpa-finder/"
+      />
+      <ToolCTA
+        title="Document Checklist"
+        description="Generate a personalized list of documents you'll need for your mortgage application"
+        href="/tools/document-checklist/"
+      />
+    </div>
+  </div>
+</PageLayout>

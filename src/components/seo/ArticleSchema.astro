@@ -1,0 +1,41 @@
+---
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+  imageUrl?: string;
+}
+
+const {
+  title,
+  description,
+  datePublished,
+  dateModified = datePublished,
+  authorName = siteConfig.editorialAuthor.name,
+  imageUrl,
+} = Astro.props;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished,
+  dateModified,
+  author: {
+    '@type': 'Person',
+    name: authorName,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: siteConfig.companyName,
+    url: siteConfig.siteUrl,
+  },
+  ...(imageUrl ? { image: imageUrl } : {}),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

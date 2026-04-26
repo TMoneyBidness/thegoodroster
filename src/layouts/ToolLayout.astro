@@ -1,0 +1,48 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema.astro';
+import { siteConfig } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  toolName: string;
+  canonicalUrl?: string;
+}
+
+const { title, description, toolName, ...rest } = Astro.props;
+---
+<BaseLayout title={title} description={description} {...rest}>
+  <BreadcrumbSchema items={[
+    { label: 'Tools', href: '/tools/' },
+    { label: toolName, href: Astro.url.pathname },
+  ]} />
+
+  <nav aria-label="Breadcrumb" class="container-content py-3 text-body-sm text-neutral-500">
+    <ol class="flex items-center gap-1.5 flex-wrap">
+      <li><a href="/" class="hover:text-primary-600 no-underline">Home</a></li>
+      <li class="flex items-center gap-1.5">
+        <span aria-hidden="true">/</span>
+        <a href="/tools/" class="hover:text-primary-600 no-underline">Tools</a>
+      </li>
+      <li class="flex items-center gap-1.5">
+        <span aria-hidden="true">/</span>
+        <span class="text-neutral-700 font-medium" aria-current="page">{toolName}</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="container-content py-8">
+    <slot name="tool" />
+
+    <!-- Tool disclaimer -->
+    <div class="mt-6 p-4 bg-neutral-50 rounded-lg border border-neutral-200 text-body-sm text-neutral-500">
+      <p>{siteConfig.toolDisclaimer}</p>
+    </div>
+
+    <!-- Educational content below tool -->
+    <div class="prose max-w-prose mt-12">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

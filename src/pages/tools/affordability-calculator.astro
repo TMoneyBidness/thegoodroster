@@ -1,0 +1,63 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { siteConfig } from '../../config/site';
+import AffordabilityCalculator from '../../components/tools/AffordabilityCalculator.tsx';
+import PartnerListCTA from '../../components/cta/PartnerListCTA.astro';
+---
+<ToolLayout
+  title={`How Much House Can You Afford in San Diego? | ${siteConfig.siteName}`}
+  description="Calculate how much home you can afford in San Diego based on your income, debts, and down payment. Uses conservative DTI ratios with SD-specific costs."
+  toolName="Affordability Calculator"
+>
+  <Fragment slot="tool">
+    <h1 class="text-h1 font-bold text-neutral-900 mb-3">How Much House Can You Afford in San Diego?</h1>
+    <p class="text-body-lg text-neutral-600 mb-6">
+      Get a realistic estimate based on your income, debts, and savings — with San Diego's property tax rates and insurance costs built in.
+    </p>
+    <AffordabilityCalculator client:load />
+  </Fragment>
+
+  <h2>How we calculate affordability</h2>
+  <p>
+    This calculator uses the same debt-to-income (DTI) ratios that lenders use to qualify borrowers. We show you three price tiers so you can make an informed decision about how much to spend.
+  </p>
+
+  <h3>The 28/36 rule</h3>
+  <p>
+    Most lenders follow the 28/36 rule: your housing costs (mortgage payment, property tax, insurance) should not exceed <strong>28%</strong> of your gross monthly income, and your total debt payments (housing costs plus car loans, student loans, credit cards) should not exceed <strong>36%</strong> of your gross income.
+  </p>
+  <p>
+    FHA loans are more flexible, typically allowing up to 31% front-end and 43% back-end ratios, which means you may qualify for more with an FHA loan.
+  </p>
+
+  <h3>Why we show three price tiers</h3>
+  <p>
+    Just because a lender will approve you for a certain amount doesn't mean you should borrow that much. Our "comfortable" tier uses a 25% front-end ratio, and our "conservative" tier uses 20%. Many financial advisors recommend keeping housing costs well below the maximum to leave room for savings, emergencies, and enjoying life in San Diego.
+  </p>
+
+  <h2>Factors that affect what you can afford</h2>
+
+  <h3>Credit score</h3>
+  <p>
+    Your credit score directly impacts your interest rate. A buyer with a 740+ score might get a rate 1-1.5% lower than a buyer with a 620 score. On a $600,000 loan, that difference can mean $400-$600 more per month — which significantly affects how much home you can afford.
+  </p>
+
+  <h3>Down payment</h3>
+  <p>
+    A larger down payment means a smaller loan amount, which means a lower monthly payment. It also eliminates or reduces PMI if you're using a conventional loan. And with San Diego's <a href="/down-payment-assistance-san-diego/">generous DPA programs</a>, your effective down payment might be much larger than your savings alone.
+  </p>
+
+  <h3>Existing debts</h3>
+  <p>
+    Car payments, student loans, and minimum credit card payments all count against your back-end DTI ratio. Paying down debts before applying for a mortgage can significantly increase how much home you qualify for.
+  </p>
+
+  <h2>San Diego-specific considerations</h2>
+  <p>
+    This calculator uses San Diego's average effective property tax rate of 1.25% and homeowner's insurance average of $1,500/year. If you're considering a home in a newer development, remember to add Mello-Roos taxes — use our <a href="/tools/mortgage-calculator/">mortgage calculator</a> to see the full picture.
+  </p>
+
+  <div class="mt-8">
+    <PartnerListCTA context="Ready to get pre-approved? A local professional can tell you exactly what you qualify for." />
+  </div>
+</ToolLayout>

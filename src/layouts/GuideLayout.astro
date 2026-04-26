@@ -1,0 +1,72 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema.astro';
+import ArticleSchema from '../components/seo/ArticleSchema.astro';
+import EditorialBadge from '../components/trust/EditorialBadge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  category?: string;
+  readingTime?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  datePublished,
+  dateModified,
+  category = 'Guide',
+  readingTime,
+  ...rest
+} = Astro.props;
+---
+<BaseLayout title={title} description={description} ogType="article" {...rest}>
+  <BreadcrumbSchema items={[
+    { label: 'Guides', href: '/guides/' },
+    { label: title, href: Astro.url.pathname },
+  ]} />
+  <ArticleSchema
+    title={title}
+    description={description}
+    datePublished={datePublished}
+    dateModified={dateModified}
+  />
+
+  <nav aria-label="Breadcrumb" class="container-content py-3 text-body-sm text-neutral-500">
+    <ol class="flex items-center gap-1.5 flex-wrap">
+      <li><a href="/" class="hover:text-primary-600 no-underline">Home</a></li>
+      <li class="flex items-center gap-1.5">
+        <span aria-hidden="true">/</span>
+        <a href="/guides/" class="hover:text-primary-600 no-underline">Guides</a>
+      </li>
+      <li class="flex items-center gap-1.5">
+        <span aria-hidden="true">/</span>
+        <span class="text-neutral-700 font-medium" aria-current="page">{title}</span>
+      </li>
+    </ol>
+  </nav>
+
+  <article class="container-prose py-8">
+    <header class="mb-8">
+      {category && (
+        <span class="inline-block px-3 py-1 bg-primary-50 text-primary-700 text-body-sm font-medium rounded-full mb-3">
+          {category}
+        </span>
+      )}
+      <h1 class="text-h1 font-bold text-neutral-900 mb-3">{title}</h1>
+      <div class="flex items-center gap-4 text-body-sm text-neutral-500">
+        <EditorialBadge dateModified={dateModified || datePublished} />
+        {readingTime && <span>{readingTime} read</span>}
+      </div>
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

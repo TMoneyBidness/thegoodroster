@@ -1,0 +1,101 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ComparisonTable from '../../components/content/ComparisonTable.astro';
+import PrimaryCTA from '../../components/cta/PrimaryCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Loan Programs', href: '/loan-programs/' },
+];
+---
+
+<PageLayout
+  title="San Diego Loan Programs for First-Time Homebuyers"
+  description="Compare FHA, VA, conventional, and CalHFA loan programs available to first-time homebuyers in San Diego County. Find the right mortgage for your situation."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="py-8">
+    <header class="mb-10">
+      <h1 class="text-h1 font-bold text-neutral-900 mb-4">Loan Programs for San Diego First-Time Homebuyers</h1>
+      <p class="text-body-lg text-neutral-600 max-w-2xl">
+        Buying your first home in San Diego starts with choosing the right loan. Each mortgage program has different credit requirements, down payment minimums, and benefits. This guide breaks down your main options so you can find the best fit.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="text-h2 font-bold text-neutral-900 mb-4">Compare Loan Programs at a Glance</h2>
+      <ComparisonTable
+        headers={["Loan Type", "Min Down Payment", "Min Credit Score", "SD Loan Limit", "Best For"]}
+        rows={[
+          ["<a href='/loan-programs/fha-loans-san-diego/' class='text-primary-600 hover:underline'>FHA Loan</a>", "3.5%", "580 (3.5% down)<br>500 (10% down)", "$1,077,550", "Buyers with lower credit scores or smaller savings"],
+          ["<a href='/loan-programs/va-loans-san-diego/' class='text-primary-600 hover:underline'>VA Loan</a>", "0%", "No VA minimum (lenders typically want 620+)", "No limit with full entitlement", "Veterans, active-duty, and eligible surviving spouses"],
+          ["<a href='/loan-programs/conventional-loans-san-diego/' class='text-primary-600 hover:underline'>Conventional Loan</a>", "3%", "620+", "$766,550 (conforming)", "Buyers with strong credit who want to avoid FHA mortgage insurance"],
+          ["<a href='/loan-programs/calhfa-loans-san-diego/' class='text-primary-600 hover:underline'>CalHFA Programs</a>", "Varies (often 3%–3.5%)", "660+ (program dependent)", "Varies by program", "First-time buyers who need down payment or closing cost help"],
+        ]}
+        caption="San Diego County loan program comparison (2026 estimates)"
+      />
+      <p class="text-body-sm text-neutral-500 mt-2">
+        All figures are estimates only. Contact a licensed loan officer for current program details and eligibility.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-h2 font-bold text-neutral-900 mb-6">Explore Each Loan Program</h2>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        <a href="/loan-programs/fha-loans-san-diego/" class="block border border-neutral-200 rounded-xl p-6 hover:border-primary-300 hover:shadow-md transition-all no-underline group">
+          <h3 class="text-body-lg font-semibold text-neutral-900 group-hover:text-primary-700 mb-2">FHA Loans</h3>
+          <p class="text-body text-neutral-600 mb-3">
+            Backed by the Federal Housing Administration, FHA loans let you buy with as little as 3.5% down and a credit score starting at 580. San Diego's 2026 FHA loan limit of $1,077,550 covers most of the local market.
+          </p>
+          <span class="text-primary-600 font-medium text-body-sm">Learn about FHA loans &rarr;</span>
+        </a>
+
+        <a href="/loan-programs/va-loans-san-diego/" class="block border border-neutral-200 rounded-xl p-6 hover:border-primary-300 hover:shadow-md transition-all no-underline group">
+          <h3 class="text-body-lg font-semibold text-neutral-900 group-hover:text-primary-700 mb-2">VA Loans</h3>
+          <p class="text-body text-neutral-600 mb-3">
+            Available to veterans, active-duty service members, and eligible surviving spouses, VA loans offer zero down payment and no private mortgage insurance. San Diego is the number one VA loan county in the country.
+          </p>
+          <span class="text-primary-600 font-medium text-body-sm">Learn about VA loans &rarr;</span>
+        </a>
+
+        <a href="/loan-programs/conventional-loans-san-diego/" class="block border border-neutral-200 rounded-xl p-6 hover:border-primary-300 hover:shadow-md transition-all no-underline group">
+          <h3 class="text-body-lg font-semibold text-neutral-900 group-hover:text-primary-700 mb-2">Conventional Loans</h3>
+          <p class="text-body text-neutral-600 mb-3">
+            Conventional loans are not government-backed, which means fewer restrictions on property type and loan terms. With 20% down, you skip private mortgage insurance entirely. Conforming limits in San Diego reach $766,550.
+          </p>
+          <span class="text-primary-600 font-medium text-body-sm">Learn about conventional loans &rarr;</span>
+        </a>
+
+        <a href="/loan-programs/calhfa-loans-san-diego/" class="block border border-neutral-200 rounded-xl p-6 hover:border-primary-300 hover:shadow-md transition-all no-underline group">
+          <h3 class="text-body-lg font-semibold text-neutral-900 group-hover:text-primary-700 mb-2">CalHFA Programs</h3>
+          <p class="text-body text-neutral-600 mb-3">
+            California Housing Finance Agency programs provide down payment assistance and affordable first mortgages for first-time buyers. Programs like Dream For All can offer up to $150,000 in assistance.
+          </p>
+          <span class="text-primary-600 font-medium text-body-sm">Learn about CalHFA programs &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-h2 font-bold text-neutral-900 mb-4">How to Choose the Right Loan Program</h2>
+      <div class="prose">
+        <p>
+          The best loan program depends on your personal financial situation. Here are a few questions to guide your decision:
+        </p>
+        <ul>
+          <li><strong>Are you a veteran or active-duty service member?</strong> A VA loan is almost always your best option thanks to zero down payment and no PMI.</li>
+          <li><strong>Is your credit score below 620?</strong> FHA loans are more flexible on credit than conventional loans.</li>
+          <li><strong>Do you have 20% saved for a down payment?</strong> A conventional loan lets you avoid mortgage insurance entirely.</li>
+          <li><strong>Do you need help with your down payment?</strong> CalHFA programs and San Diego Housing Commission grants can be layered on top of FHA or conventional loans.</li>
+        </ul>
+        <p>
+          You don't have to figure this out alone. A local loan officer can review your finances and recommend the program that saves you the most money over the life of the loan.
+        </p>
+      </div>
+    </section>
+
+    <div class="flex flex-col items-center gap-4 py-8">
+      <PrimaryCTA text="Take the 60-Second Homebuyer Quiz" size="large" />
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  text?: string;
+  href?: string;
+}
+
+const {
+  text = 'Take the Quiz',
+  href = '/tools/mortgage-calculator/',
+} = Astro.props;
+---
+<div class="fixed bottom-0 left-0 right-0 z-30 lg:hidden bg-white border-t border-neutral-200 p-3 shadow-lg">
+  <a href={href} class="btn-accent w-full text-center no-underline">
+    {text}
+  </a>
+</div>
+
+<!-- Add bottom padding to body to account for sticky CTA on mobile -->
+<style>
+  @media (max-width: 1023px) {
+    :global(body) {
+      padding-bottom: 4.5rem;
+    }
+  }
+</style>

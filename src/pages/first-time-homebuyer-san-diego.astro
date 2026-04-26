@@ -1,0 +1,663 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema.astro';
+import ArticleSchema from '../components/seo/ArticleSchema.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import FAQAccordion from '../components/content/FAQAccordion.astro';
+import ComparisonTable from '../components/content/ComparisonTable.astro';
+import ScenarioBox from '../components/content/ScenarioBox.astro';
+import PrimaryCTA from '../components/cta/PrimaryCTA.astro';
+import PartnerListCTA from '../components/cta/PartnerListCTA.astro';
+import EditorialBadge from '../components/trust/EditorialBadge.astro';
+import TrustBlock from '../components/trust/TrustBlock.astro';
+import UpdatedNotice from '../components/content/UpdatedNotice.astro';
+import KeyStatBlock from '../components/content/KeyStatBlock.astro';
+import { siteConfig } from '../config/site';
+
+const title = `First-Time Home Buyer in San Diego: Complete 2026 Guide | ${siteConfig.siteName}`;
+const description = 'Everything first-time home buyers need to know about purchasing a home in San Diego. Down payment assistance programs, loan options, income requirements, and step-by-step guidance for 2026.';
+const datePublished = '2026-01-15';
+const dateModified = '2026-04-15';
+const canonicalUrl = `${siteConfig.siteUrl}/first-time-homebuyer-san-diego/`;
+
+const breadcrumbs = [
+  { label: 'First-Time Homebuyer San Diego', href: '/first-time-homebuyer-san-diego/' },
+];
+
+const faqItems = [
+  {
+    question: 'How much do first-time buyers need for a down payment in San Diego?',
+    answer: 'It depends on the loan type. FHA loans require as little as 3.5% down, conventional loans start at 3%, and VA loans require zero down payment. On a $700,000 home, that ranges from $0 to $24,500. San Diego also has multiple down payment assistance programs that can cover part or all of your down payment.',
+  },
+  {
+    question: 'What programs are available for first-time homebuyers in San Diego?',
+    answer: 'San Diego has at least seven major assistance programs including the SDHC Low-Income and Middle-Income programs, San Diego County DCCA/CalHome, CalHFA MyHome, CalHFA Dream For All, GSFA Platinum, and the San Diego Black Homebuyers Program. These can provide between $10,000 and $150,000 in down payment and closing cost help.',
+  },
+  {
+    question: 'What salary do you need to buy a home in San Diego?',
+    answer: 'For a median-priced San Diego home near $1 million, you would generally need a household income of roughly $180,000 or more. However, many first-time buyers target homes in the $500,000 to $750,000 range, where a household income of $100,000 to $140,000 can be enough, especially with down payment assistance.',
+  },
+  {
+    question: 'Is it a good time to buy a house in San Diego?',
+    answer: 'Timing the market perfectly is nearly impossible. What matters more is whether buying makes sense for your personal financial situation. If you plan to stay in the home for at least five years, have stable income, manageable debt, and can afford the monthly payment without stretching your budget too thin, it could be a good time for you regardless of market conditions.',
+  },
+  {
+    question: 'How long does the homebuying process take?',
+    answer: 'From the day you start looking to closing day, most first-time buyers in San Diego spend 3 to 6 months. Getting pre-approved takes a few days to a week. House hunting varies widely. Once you are under contract, closing typically takes 30 to 45 days, though some DPA programs require additional processing time of 45 to 60 days.',
+  },
+  {
+    question: 'What credit score do I need to buy a home in San Diego?',
+    answer: 'FHA loans require a minimum credit score of 580 for the 3.5% down payment option, or 500 with 10% down. Conventional loans generally require 620 or higher. VA loans have no official minimum, but most lenders want at least 620. For the best interest rates, aim for 740 or above.',
+  },
+  {
+    question: 'Can I buy a home in San Diego with no money down?',
+    answer: 'Yes. VA loans offer zero down payment for eligible veterans, active-duty service members, and qualifying surviving spouses. Some down payment assistance programs can also effectively cover your entire down payment, making a no-money-down purchase possible even without military service.',
+  },
+  {
+    question: 'What is the FHA loan limit in San Diego?',
+    answer: 'The FHA loan limit for San Diego County is $1,077,550 for a single-family home as of 2025. This is one of the highest FHA limits in the country because San Diego is classified as a high-cost area. This limit is updated annually.',
+  },
+  {
+    question: 'What is Mello-Roos and how does it affect my payment?',
+    answer: 'Mello-Roos is a special tax district assessment common in newer San Diego communities. It funds infrastructure like roads, schools, and parks. It can add $200 to $500 or more per month to your property tax bill. Not all homes have Mello-Roos, so always ask before making an offer.',
+  },
+  {
+    question: 'Do I need to pay back down payment assistance?',
+    answer: 'It depends on the program. Some DPA programs offer forgivable loans that are waived after you live in the home for a certain number of years. Others are deferred loans with no monthly payments that come due when you sell, refinance, or no longer occupy the home. A few programs provide outright grants that never need to be repaid. Each program has different terms.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  ogType="article"
+  article={{ publishedTime: datePublished, modifiedTime: dateModified }}
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <ArticleSchema
+    title="First-Time Home Buyer in San Diego: Your Complete Guide"
+    description={description}
+    datePublished={datePublished}
+    dateModified={dateModified}
+  />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center gap-2 text-body-sm text-neutral-500">
+        <li><a href="/" class="hover:text-primary-600">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-neutral-800 font-medium">First-Time Homebuyer San Diego</li>
+      </ol>
+    </nav>
+
+    <!-- Above the fold -->
+    <header class="mb-10">
+      <h1 class="mb-4">First-Time Home Buyer in San Diego: Your Complete Guide</h1>
+
+      <UpdatedNotice date="2026-04-15" sources={["SDHC", "CalHFA", "San Diego County HCD"]} />
+      <EditorialBadge dateModified={dateModified} />
+
+      <p class="text-body-sm text-neutral-500 mt-2">15 min read</p>
+
+      <!-- Jump-to-section nav -->
+      <nav aria-label="Table of contents" class="mt-6 bg-neutral-50 rounded-xl p-5 border border-neutral-200">
+        <p class="font-semibold text-neutral-800 mb-3">In this guide</p>
+        <ol class="grid sm:grid-cols-2 gap-2 text-body-sm">
+          <li><a href="#can-you-buy">Can you actually buy a home in San Diego?</a></li>
+          <li><a href="#benchmarks">Income, down payment, and credit benchmarks</a></li>
+          <li><a href="#loan-programs">Loan programs for first-time buyers</a></li>
+          <li><a href="#dpa-programs">Down payment assistance programs</a></li>
+          <li><a href="#scenarios">Real-world scenarios</a></li>
+          <li><a href="#process">The home-buying process step by step</a></li>
+          <li><a href="#sd-costs">San Diego-specific costs</a></li>
+          <li><a href="#choosing-pro">Choosing a mortgage professional</a></li>
+          <li><a href="#mistakes">Common mistakes to avoid</a></li>
+          <li><a href="#faq">Frequently asked questions</a></li>
+        </ol>
+      </nav>
+
+      <div class="mt-6">
+        <PrimaryCTA text="See if you qualify — 60-second quiz" href="/tools/dpa-finder/" size="large" />
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <div class="prose">
+
+      <!-- Section 1 -->
+      <section id="can-you-buy">
+        <h2>Can you actually buy a home in San Diego?</h2>
+
+        <p>
+          Let's address the elephant in the room. The median home price in San Diego County is hovering around
+          <strong>$1,000,000</strong>. When you see that number, your first reaction is probably: "There's no way I
+          can afford that." And honestly? You might not need to.
+        </p>
+
+        <p>
+          That million-dollar median includes luxury beachfront properties in La Jolla and sprawling estates in
+          Rancho Santa Fe. It does not represent what most first-time buyers are actually purchasing. Condos, townhomes,
+          and single-family homes in communities like Chula Vista, El Cajon, Escondido, Spring Valley, and Imperial Beach
+          regularly sell in the $450,000 to $750,000 range. That is a very different conversation.
+        </p>
+
+        <KeyStatBlock
+          stat="$1,077,550"
+          label="FHA loan limit in San Diego County"
+          source="HUD, 2025"
+        />
+
+        <p>
+          San Diego is classified as a high-cost area by the federal government, which means the
+          <strong>FHA loan limit here is $1,077,550</strong> for a single-family home. That is one of the highest
+          FHA limits in the entire country. It means government-backed financing with a low down payment
+          is available for homes well above the national average.
+        </p>
+
+        <p>
+          On top of that, San Diego has some of the most generous down payment assistance programs in California.
+          Between city, county, state, and nonprofit resources, first-time buyers can access
+          <strong>$10,000 to $150,000 in help</strong> with their down payment and closing costs. Many buyers
+          who assume they cannot afford to buy are surprised to learn how much support is actually out there.
+        </p>
+
+        <p>
+          The bottom line: buying in San Diego is harder than in most American cities, but it is far from
+          impossible. You need the right loan, the right assistance programs, and realistic expectations
+          about what your first home will look like. This guide walks you through all of it.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="benchmarks">
+        <h2>What does it take? Income, down payment, and credit benchmarks</h2>
+
+        <p>
+          Before you start browsing listings, you need to understand the real numbers. Here is what lenders
+          typically look for when you apply for a mortgage in San Diego.
+        </p>
+
+        <h3>Income requirements</h3>
+
+        <p>
+          Lenders use your <strong>debt-to-income ratio (DTI)</strong> to determine how much you can borrow.
+          Most want your total monthly debts, including your future mortgage payment, to stay below 43% to 50%
+          of your gross monthly income. Here is what that looks like for common San Diego price points:
+        </p>
+
+        <ul>
+          <li><strong>$500,000 home:</strong> You generally need a household income of about $95,000 to $110,000</li>
+          <li><strong>$700,000 home:</strong> Plan on roughly $120,000 to $140,000 in household income</li>
+          <li><strong>$900,000 home:</strong> You will likely need $160,000 or more</li>
+        </ul>
+
+        <p>
+          These estimates assume a 30-year fixed-rate mortgage, current interest rates around 6.5% to 7%,
+          standard property taxes, and homeowner's insurance. Your actual numbers will depend on your
+          down payment size, existing debts, and the specific loan program you choose.
+        </p>
+
+        <h3>Down payment requirements</h3>
+
+        <p>
+          The idea that you need 20% down to buy a home is one of the most persistent myths in real estate.
+          Here is what you actually need by loan type:
+        </p>
+
+        <ul>
+          <li><strong>FHA loan:</strong> 3.5% minimum ($24,500 on a $700K home)</li>
+          <li><strong>Conventional loan:</strong> 3% minimum ($21,000 on a $700K home)</li>
+          <li><strong>VA loan:</strong> 0% down — no down payment required for eligible veterans</li>
+          <li><strong>USDA loan:</strong> 0% down — limited rural areas of San Diego County may qualify</li>
+        </ul>
+
+        <p>
+          And remember: down payment assistance programs can cover part or all of these amounts.
+          A buyer using an FHA loan with SDHC assistance might only need a few thousand dollars
+          of their own money to close on a home.
+        </p>
+
+        <h3>Credit score minimums</h3>
+
+        <p>
+          Your credit score determines which loan programs you qualify for and what interest rate you will receive.
+          Higher scores mean lower rates and lower monthly payments.
+        </p>
+
+        <ul>
+          <li><strong>FHA:</strong> 580 minimum for 3.5% down (500 with 10% down)</li>
+          <li><strong>Conventional:</strong> 620 minimum, though 680+ gets better rates</li>
+          <li><strong>VA:</strong> No official government minimum, but most lenders require 620+</li>
+          <li><strong>Best rates:</strong> 740+ across all loan types</li>
+        </ul>
+
+        <p>
+          If your credit score is below 620, focus on improving it before you apply. Even a 20-point
+          increase can save you tens of thousands of dollars over the life of your loan. Pay down credit
+          card balances, avoid opening new accounts, and dispute any errors on your credit report.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="loan-programs">
+        <h2>Loan programs available to first-time buyers</h2>
+
+        <p>
+          Not all mortgages are created equal. The right loan program depends on your credit score, down payment
+          savings, military service history, and income level. Here is how the major options compare for
+          San Diego buyers:
+        </p>
+
+        <ComparisonTable
+          caption="Loan program comparison for San Diego first-time buyers"
+          headers={["Program", "Min Down Payment", "Min Credit Score", "Loan Limit (SD)", "Best For"]}
+          rows={[
+            ["FHA", "3.5%", "580", "$1,077,550", "Buyers with lower credit scores or smaller savings"],
+            ["VA", "0%", "No official min (620 typical)", "$1,077,550 (no limit with full entitlement)", "Veterans, active-duty, and eligible surviving spouses"],
+            ["Conventional", "3%", "620", "$766,550 conforming", "Buyers with strong credit (700+) and steady income"],
+            ["CalHFA FHA", "3.5% (MyHome can cover)", "660", "$1,077,550", "First-time buyers who want state DPA assistance"],
+          ]}
+        />
+
+        <p>
+          <strong>FHA loans</strong> are the most common choice for first-time buyers in San Diego. They accept
+          lower credit scores, require less money down, and have more flexible underwriting guidelines than
+          conventional loans. The trade-off is that FHA loans require mortgage insurance premiums (MIP), which
+          adds to your monthly payment for the life of the loan unless you refinance.
+        </p>
+
+        <p>
+          <strong>VA loans</strong> are the single best mortgage product available in the United States. If you
+          are a veteran, active-duty service member, or qualifying surviving spouse, you can buy a home with
+          zero down payment, no monthly mortgage insurance, and competitive interest rates. San Diego's large
+          military community means many buyers have access to this program without realizing it.
+        </p>
+
+        <p>
+          <strong>Conventional loans</strong> require higher credit scores, but they come with advantages.
+          If you put down 20%, you avoid private mortgage insurance entirely. Even with less than 20% down,
+          PMI on a conventional loan is usually cheaper than FHA mortgage insurance, and it drops off
+          automatically once you reach 20% equity.
+        </p>
+
+        <p>
+          <strong>CalHFA loans</strong> are state-administered programs that wrap down payment assistance
+          into the loan package. They use FHA or conventional loan structures underneath but add forgivable
+          or deferred second loans to cover your down payment. You must be a first-time buyer, meet income
+          limits, and complete a homebuyer education course.
+        </p>
+
+        <p>
+          For detailed information on each loan type, visit our <a href="/loan-programs/">Loan Programs guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="dpa-programs">
+        <h2>Down payment assistance programs in San Diego</h2>
+
+        <p>
+          San Diego has more down payment assistance options than most cities in California. Between local,
+          county, state, and nonprofit programs, there are at least <strong>seven active programs</strong>
+          that can help you cover your down payment and closing costs.
+        </p>
+
+        <KeyStatBlock
+          stat="$10,000 – $150,000"
+          label="in down payment assistance may be available to you"
+          source="SDHC, CalHFA, SD County HCD, 2025"
+        />
+
+        <p>
+          Here is a quick overview of what is available. The amount you can receive depends on your income,
+          where you are buying, and which programs you qualify for.
+        </p>
+
+        <ul>
+          <li>
+            <strong>SDHC Low-Income Program:</strong> Up to 22% of the purchase price plus a $10,000 grant.
+            Available to buyers earning 80% or less of the Area Median Income. City of San Diego only.
+          </li>
+          <li>
+            <strong>SDHC Middle-Income Program:</strong> Up to $40,000 in a deferred loan plus a $10,000 grant.
+            For buyers earning between 80% and 150% of AMI. City of San Diego only.
+          </li>
+          <li>
+            <strong>San Diego County DCCA/CalHome:</strong> Up to 17% of the purchase price plus a $10,000 grant.
+            For buyers earning 80% or less of AMI. Available in unincorporated areas and participating cities
+            outside the City of San Diego.
+          </li>
+          <li>
+            <strong>CalHFA MyHome:</strong> Up to 3.5% of the purchase price (FHA) or 3% (conventional) as
+            a deferred second loan. Available statewide to first-time buyers.
+          </li>
+          <li>
+            <strong>CalHFA Dream For All:</strong> Up to 20% of the purchase price, capped at $150,000.
+            This popular program operates on a lottery system and funds go fast when available.
+          </li>
+          <li>
+            <strong>GSFA Platinum:</strong> Up to 5.5% of the loan amount. Available statewide.
+            One of the few programs that does not require first-time buyer status.
+          </li>
+          <li>
+            <strong>San Diego Black Homebuyers Program:</strong> Up to $40,000 in assistance.
+            For buyers earning less than 120% of AMI within San Diego County.
+          </li>
+        </ul>
+
+        <p>
+          Many buyers are eligible for more than one program, and some programs can be combined. The rules around
+          stacking are complicated, so working with a mortgage professional who knows these programs is important.
+        </p>
+
+        <p>
+          For complete details on every program, including eligibility requirements, how to apply, and which
+          programs can be combined, visit our
+          <a href="/down-payment-assistance-san-diego/">Down Payment Assistance Programs hub</a>.
+        </p>
+
+        <div class="my-6">
+          <PrimaryCTA text="Find your DPA matches" href="/tools/dpa-finder/" />
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="scenarios">
+        <h2>Real-world scenarios</h2>
+
+        <p>
+          Numbers on a page only mean so much. Here are three realistic scenarios showing how San Diego
+          first-time buyers at different income levels can make homeownership work.
+        </p>
+
+        <ScenarioBox
+          title="Scenario 1: $85K income, $20K savings"
+          income="$85,000"
+          savings="$20,000"
+          result="Could purchase a ~$450K condo with FHA + SDHC down payment assistance"
+          details={[
+            "FHA loan at 3.5% down = ~$15,750 needed",
+            "SDHC Low-Income Program could cover the entire down payment plus closing costs",
+            "Estimated monthly payment: ~$3,100 (PITI + MIP)",
+            "Target areas: City Heights, Encanto, Southeastern SD, El Cajon",
+            "Would likely qualify for SDHC if income is at or below 80% AMI",
+          ]}
+        />
+
+        <ScenarioBox
+          title="Scenario 2: $120K income, $40K savings"
+          income="$120,000"
+          savings="$40,000"
+          result="Could purchase a ~$650K home conventional, or $700K+ with CalHFA"
+          details={[
+            "Conventional loan at 5% down = ~$32,500 on a $650K home",
+            "CalHFA MyHome could provide an additional 3% to stretch purchasing power",
+            "SDHC Middle-Income Program could add up to $40K + $10K grant",
+            "Estimated monthly payment: ~$4,200–$4,600 (PITI + PMI)",
+            "Target areas: Chula Vista, Santee, Lakeside, Spring Valley, Escondido",
+          ]}
+        />
+
+        <ScenarioBox
+          title="Scenario 3: $150K income, $60K savings, veteran"
+          income="$150,000"
+          savings="$60,000"
+          result="VA loan — no down payment needed, could target $800K+ homes"
+          details={[
+            "VA loan requires $0 down and has no monthly mortgage insurance",
+            "$60K savings can go entirely toward closing costs and reserves",
+            "Estimated monthly payment: ~$5,100 (PITI, no PMI/MIP)",
+            "With full VA entitlement, there is no loan limit",
+            "Target areas: Clairemont, Serra Mesa, Mira Mesa, San Carlos, Tierrasanta",
+          ]}
+        />
+
+        <p>
+          These scenarios are simplified illustrations. Your actual numbers will depend on current interest rates,
+          property taxes for the specific home, HOA fees, Mello-Roos assessments, and your full financial picture.
+          Use our <a href="/tools/affordability-calculator/">affordability calculator</a> for a personalized estimate.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="process">
+        <h2>The home-buying process step by step</h2>
+
+        <p>
+          Buying your first home can feel overwhelming, but it follows a predictable path. Here are the eight
+          key steps from start to finish.
+        </p>
+
+        <ol>
+          <li>
+            <strong>Check your credit and finances.</strong>
+            Pull your free credit reports from AnnualCreditReport.com. Review your score, fix any errors, and
+            pay down credit card balances. Calculate your total monthly debts. This self-assessment tells you
+            where you stand before talking to a lender.
+          </li>
+          <li>
+            <strong>Get pre-approved for a mortgage.</strong>
+            A pre-approval letter tells you exactly how much you can borrow and shows sellers you are a serious
+            buyer. Shop at least two or three lenders to compare rates and fees. A pre-approval typically takes
+            one to five business days and requires pay stubs, tax returns, and bank statements.
+          </li>
+          <li>
+            <strong>Research and apply for down payment assistance.</strong>
+            Before you start house hunting, find out which DPA programs you qualify for. Some programs require
+            you to be approved before making an offer. Our <a href="/tools/dpa-finder/">DPA Finder tool</a> can
+            help you identify your matches.
+          </li>
+          <li>
+            <strong>Complete homebuyer education.</strong>
+            Most DPA programs and some loan types require you to complete a HUD-approved homebuyer education
+            course. These courses are usually available online and take about six to eight hours. Complete this
+            early so it does not delay your timeline.
+          </li>
+          <li>
+            <strong>Find a real estate agent and start house hunting.</strong>
+            Work with an agent who knows your target neighborhoods and understands DPA programs. Be clear about
+            your budget, must-haves, and deal-breakers. Expect to tour 10 to 20 homes before finding the right one.
+          </li>
+          <li>
+            <strong>Make an offer and negotiate.</strong>
+            Your agent will help you write a competitive offer. In San Diego, expect some negotiation. Be prepared
+            to move quickly in competitive neighborhoods. Your pre-approval letter and DPA documentation strengthen
+            your offer.
+          </li>
+          <li>
+            <strong>Complete inspections, appraisal, and underwriting.</strong>
+            Once your offer is accepted, you enter the escrow period. You will hire a home inspector ($400 to $600),
+            the lender will order an appraisal ($500 to $800), and the underwriting team will verify everything in
+            your application. This phase typically takes 30 to 45 days, or 45 to 60 days with DPA programs.
+          </li>
+          <li>
+            <strong>Close on your new home.</strong>
+            At closing, you will sign a stack of documents, pay your remaining closing costs, and receive the keys.
+            Closing costs in San Diego typically run 2% to 3% of the purchase price, though some DPA programs help
+            cover these too. Congratulations — you are a homeowner.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="sd-costs">
+        <h2>San Diego-specific costs you must understand</h2>
+
+        <p>
+          San Diego has several costs that surprise first-time buyers. Understand these before you
+          set your budget so you are not caught off guard.
+        </p>
+
+        <h3>Mello-Roos (Community Facilities Districts)</h3>
+
+        <p>
+          Mello-Roos is a special tax assessment found in many newer San Diego communities. It pays for infrastructure
+          like roads, schools, parks, sewer systems, and fire stations. Unlike regular property taxes, Mello-Roos
+          assessments are a fixed dollar amount that does not change with your home's value.
+        </p>
+
+        <p>
+          Mello-Roos can add <strong>$200 to $500+ per month</strong> to your housing cost. It is most common in
+          master-planned communities in Otay Ranch, San Marcos, Carmel Valley, and other newer developments.
+          Older neighborhoods generally do not have Mello-Roos. Always ask about special assessments before
+          making an offer, and factor them into your monthly budget.
+        </p>
+
+        <h3>Property taxes</h3>
+
+        <p>
+          California's Proposition 13 caps your base property tax rate at 1% of the purchase price, with annual
+          increases limited to 2%. However, voter-approved bonds and special assessments typically push the
+          <strong>effective tax rate to about 1.1% to 1.25%</strong> of the purchase price. On a $700,000 home,
+          expect to pay roughly $7,700 to $8,750 per year in property taxes, or about $640 to $730 per month.
+        </p>
+
+        <h3>Homeowner's insurance</h3>
+
+        <p>
+          Standard homeowner's insurance in San Diego runs about $1,200 to $2,000 per year for most homes.
+          However, if your home is in a designated <strong>wildfire risk zone</strong>, which includes many
+          areas in eastern San Diego County, the foothills, and some coastal canyons, your insurance costs
+          can be significantly higher. Some homeowners in high-risk zones pay $3,000 to $5,000 or more per year,
+          and finding coverage can be difficult. California's FAIR Plan provides a last-resort option, but the
+          coverage is limited and expensive.
+        </p>
+
+        <p>
+          Ask your insurance agent about wildfire risk before making an offer on a home. In some cases,
+          high insurance costs can push a home out of your budget even if the purchase price seems affordable.
+        </p>
+
+        <h3>HOA fees</h3>
+
+        <p>
+          If you are buying a condo, townhome, or a home in a planned community, you will almost certainly pay
+          homeowner's association fees. In San Diego, HOA fees typically range from <strong>$200 to $600 per
+          month</strong> for condos and $50 to $200 per month for single-family homes in planned communities.
+          These fees cover shared maintenance, insurance for common areas, and amenities. They are on top of
+          your mortgage payment and are factored into your debt-to-income ratio by lenders.
+        </p>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="choosing-pro">
+        <h2>Choosing a mortgage professional</h2>
+
+        <p>
+          Your mortgage professional is one of the most important people in your homebuying journey. A great
+          one can save you thousands of dollars and steer you to programs you did not know existed. A mediocre
+          one can cost you money or, worse, lose your deal entirely.
+        </p>
+
+        <p>Here is what to look for:</p>
+
+        <ul>
+          <li>
+            <strong>DPA program experience.</strong> Not all loan officers know how to originate DPA loans. Ask
+            specifically: "How many SDHC or CalHFA loans have you closed in the past year?" If the answer is
+            zero, keep looking.
+          </li>
+          <li>
+            <strong>Local market knowledge.</strong> San Diego's real estate market has unique quirks. Your
+            mortgage professional should understand Mello-Roos, local property tax variations, and which
+            neighborhoods qualify for which programs.
+          </li>
+          <li>
+            <strong>Responsiveness.</strong> In a competitive market, delays kill deals. Your loan officer
+            should return calls and emails within a few hours, not days.
+          </li>
+          <li>
+            <strong>Transparent pricing.</strong> Ask for a detailed Loan Estimate early in the process.
+            Compare origination fees, discount points, and lender credits across at least two or three lenders.
+          </li>
+          <li>
+            <strong>Patience with first-time buyers.</strong> You will have a lot of questions. A good mortgage
+            professional welcomes them and explains things in plain language without making you feel rushed
+            or uninformed.
+          </li>
+        </ul>
+
+        <p>Questions to ask during your first conversation:</p>
+
+        <ol>
+          <li>Which DPA programs am I likely to qualify for?</li>
+          <li>What will my estimated monthly payment look like?</li>
+          <li>How much will I need to bring to closing?</li>
+          <li>What is your current turn time from application to closing?</li>
+          <li>Do you charge an origination fee?</li>
+        </ol>
+
+        <div class="my-6">
+          <PrimaryCTA text="Browse Community Partners" href="/community-partners/" />
+        </div>
+      </section>
+
+      <!-- Section 9 -->
+      <section id="mistakes">
+        <h2>Common mistakes first-time buyers make</h2>
+
+        <p>
+          After working with thousands of first-time buyers, the same mistakes come up again and again.
+          Here are the five that cost people the most time, money, and heartache.
+        </p>
+
+        <ol>
+          <li>
+            <strong>Not getting pre-approved before house hunting.</strong>
+            Without a pre-approval, you are guessing at your budget, and sellers will not take your offer seriously.
+            Get pre-approved first. It costs nothing and takes a few days.
+          </li>
+          <li>
+            <strong>Ignoring down payment assistance programs.</strong>
+            Too many buyers assume they do not qualify for help. In reality, San Diego households earning up to
+            $150,000 or more can qualify for at least one assistance program. Not checking is leaving money on
+            the table.
+          </li>
+          <li>
+            <strong>Making large purchases or job changes during the process.</strong>
+            Buying a car, opening new credit cards, or switching jobs while your loan is in underwriting can
+            disqualify you. Once you are pre-approved, keep your financial life as stable as possible until
+            after closing.
+          </li>
+          <li>
+            <strong>Skipping the home inspection.</strong>
+            A $500 inspection can uncover $50,000 in problems. Never waive the inspection, no matter how
+            competitive the market feels. Foundation issues, roof damage, and plumbing problems are expensive
+            to fix and invisible to untrained eyes.
+          </li>
+          <li>
+            <strong>Maxing out their budget.</strong>
+            Just because a lender approves you for $750,000 does not mean you should buy at $750,000. Leave
+            room in your budget for maintenance, emergencies, and the fact that you still want to eat out
+            occasionally and take a vacation. A good rule of thumb is to keep your total housing cost below
+            30% of your gross monthly income.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Section 10 -->
+      <section id="faq">
+        <h2>Frequently asked questions</h2>
+
+        <p>
+          Here are answers to the questions San Diego first-time buyers ask most often.
+        </p>
+
+        <FAQAccordion items={faqItems} />
+      </section>
+
+      <!-- Closing CTA -->
+      <section class="mt-12">
+        <TrustBlock sources={["SDHC", "CalHFA", "San Diego County HCD", "HUD"]} />
+
+        <div class="mt-8">
+          <PartnerListCTA context="Ready to take the next step? Connect with a San Diego mortgage professional who specializes in first-time buyer programs." />
+        </div>
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>

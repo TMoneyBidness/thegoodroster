@@ -1,0 +1,26 @@
+---
+import { siteConfig } from '../../config/site';
+import BIABadge from './BIABadge.astro';
+
+interface Props {
+  showDisclaimer?: boolean;
+  sources?: string[];
+}
+
+const { showDisclaimer = true, sources = [] } = Astro.props;
+---
+<div class="bg-neutral-100 border-l-4 border-accent-500 rounded-xl p-6 space-y-3">
+  <BIABadge />
+
+  {showDisclaimer && (
+    <p class="text-body-sm text-neutral-600">
+      {siteConfig.disclaimerBar} Information provided is for educational purposes and should not be considered financial advice.
+    </p>
+  )}
+
+  {sources.length > 0 && (
+    <p class="text-body-sm text-neutral-500">
+      <strong class="text-neutral-600">Sources:</strong> {sources.join(', ')}
+    </p>
+  )}
+</div>

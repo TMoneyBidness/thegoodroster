@@ -1,0 +1,140 @@
+{
+  "lastUpdated": "2026-04-15",
+  "source": "San Diego Housing Commission, CalHFA, GSFA, DCCA, SD Black Homebuyers Program",
+  "programs": [
+    {
+      "id": "sdhc-low-income",
+      "name": "SDHC Low-Income Down Payment & Closing Cost Assistance",
+      "agency": "San Diego Housing Commission (SDHC)",
+      "maxAssistanceDescription": "Up to 22% of purchase price as a deferred loan + $10,000 closing cost grant",
+      "maxAssistancePercent": 22,
+      "maxAssistanceFlat": 10000,
+      "incomeLimit": {
+        "description": "Household income at or below 80% of Area Median Income",
+        "amiPercent": 80
+      },
+      "geography": "city_of_san_diego",
+      "requiresFirstTimeBuyer": true,
+      "requiresLottery": false,
+      "loanTypes": ["FHA", "VA", "USDA", "Conventional"],
+      "detailPageUrl": "/programs/sdhc-low-income",
+      "lastUpdated": "2026-04-15",
+      "notes": "Deferred second mortgage with 0% interest. Repayment due upon sale, transfer, refinance, or payoff of first mortgage. Must occupy as primary residence. Property must be located within the City of San Diego limits."
+    },
+    {
+      "id": "sdhc-middle-income",
+      "name": "SDHC Middle-Income Down Payment Assistance",
+      "agency": "San Diego Housing Commission (SDHC)",
+      "maxAssistanceDescription": "$40,000 deferred loan + $10,000 closing cost grant",
+      "maxAssistancePercent": null,
+      "maxAssistanceFlat": 50000,
+      "incomeLimit": {
+        "description": "Household income between 80% and 150% of Area Median Income",
+        "amiPercent": 150,
+        "amiFloor": 80
+      },
+      "geography": "city_of_san_diego",
+      "requiresFirstTimeBuyer": true,
+      "requiresLottery": false,
+      "loanTypes": ["FHA", "VA", "Conventional"],
+      "detailPageUrl": "/programs/sdhc-middle-income",
+      "lastUpdated": "2026-04-15",
+      "notes": "Deferred second mortgage repayable upon sale, transfer, refinance, or payoff. $40K down payment loan plus $10K closing cost grant. Must be primary residence within City of San Diego limits."
+    },
+    {
+      "id": "county-dcca-calhome",
+      "name": "County of San Diego DCCA/CalHome Program",
+      "agency": "San Diego County Department of Community & Consumer Affairs (DCCA)",
+      "maxAssistanceDescription": "Up to 17% of purchase price as deferred loan + $10,000 closing cost assistance",
+      "maxAssistancePercent": 17,
+      "maxAssistanceFlat": 10000,
+      "incomeLimit": {
+        "description": "Household income at or below 80% of Area Median Income",
+        "amiPercent": 80
+      },
+      "geography": "sd_county_not_city",
+      "requiresFirstTimeBuyer": true,
+      "requiresLottery": false,
+      "loanTypes": ["FHA", "VA", "USDA", "Conventional"],
+      "detailPageUrl": "/programs/county-dcca-calhome",
+      "lastUpdated": "2026-04-15",
+      "notes": "Available in unincorporated San Diego County and participating cities OUTSIDE the City of San Diego. Deferred loan with shared appreciation. CalHome funding — availability depends on state allocation cycles."
+    },
+    {
+      "id": "calhfa-myhome",
+      "name": "CalHFA MyHome Assistance Program",
+      "agency": "California Housing Finance Agency (CalHFA)",
+      "maxAssistanceDescription": "Up to 3.5% of purchase price (FHA) or 3% (conventional) as a deferred junior loan",
+      "maxAssistancePercent": 3.5,
+      "maxAssistanceFlat": null,
+      "incomeLimit": {
+        "description": "CalHFA income limits — varies by county and household size, generally moderate income",
+        "amiPercent": null
+      },
+      "geography": "statewide",
+      "requiresFirstTimeBuyer": true,
+      "requiresLottery": false,
+      "loanTypes": ["FHA", "Conventional"],
+      "detailPageUrl": "/programs/calhfa-myhome",
+      "lastUpdated": "2026-04-15",
+      "notes": "Must use a CalHFA-approved lender. Deferred payment, simple interest loan. 3.5% for FHA loans, 3% for conventional loans. Can be combined with other CalHFA programs. Borrower must complete homebuyer education."
+    },
+    {
+      "id": "calhfa-dream-for-all",
+      "name": "CalHFA Dream For All Shared Appreciation Loan",
+      "agency": "California Housing Finance Agency (CalHFA)",
+      "maxAssistanceDescription": "Up to 20% of purchase price (max $150,000) as a shared appreciation loan",
+      "maxAssistancePercent": 20,
+      "maxAssistanceFlat": 150000,
+      "incomeLimit": {
+        "description": "Income limits vary by county — generally targets first-generation homebuyers and low-to-moderate income households",
+        "amiPercent": null
+      },
+      "geography": "statewide",
+      "requiresFirstTimeBuyer": true,
+      "requiresLottery": true,
+      "loanTypes": ["FHA", "Conventional"],
+      "detailPageUrl": "/programs/calhfa-dream-for-all",
+      "lastUpdated": "2026-04-15",
+      "notes": "Extremely competitive — allocated via lottery when funding becomes available. Shared appreciation: borrower repays the original loan amount PLUS a proportional share of any home value increase. First-generation homebuyers given priority. Check CalHFA website for next funding round."
+    },
+    {
+      "id": "gsfa-platinum",
+      "name": "GSFA Platinum Down Payment Assistance",
+      "agency": "Golden State Finance Authority (GSFA)",
+      "maxAssistanceDescription": "Up to 5.5% of first mortgage loan amount as a gift or second lien",
+      "maxAssistancePercent": 5.5,
+      "maxAssistanceFlat": null,
+      "incomeLimit": {
+        "description": "Low-to-moderate income — limits vary by county and household size",
+        "amiPercent": null
+      },
+      "geography": "statewide",
+      "requiresFirstTimeBuyer": false,
+      "requiresLottery": false,
+      "loanTypes": ["FHA", "VA", "USDA", "Conventional"],
+      "detailPageUrl": "/programs/gsfa-platinum",
+      "lastUpdated": "2026-04-15",
+      "notes": "Does NOT require first-time buyer status — repeat buyers eligible. Assistance may be structured as a non-repayable gift or a repayable second lien depending on the program option selected. Must use a GSFA-approved lender. Widely available and less restrictive than government programs."
+    },
+    {
+      "id": "sd-black-homebuyers",
+      "name": "San Diego Black Homebuyers Program",
+      "agency": "San Diego Foundation / Black Homebuyers Program Partners",
+      "maxAssistanceDescription": "Up to $40,000 in down payment and closing cost assistance",
+      "maxAssistancePercent": null,
+      "maxAssistanceFlat": 40000,
+      "incomeLimit": {
+        "description": "Household income at or below 120% of Area Median Income",
+        "amiPercent": 120
+      },
+      "geography": "sd_county",
+      "requiresFirstTimeBuyer": true,
+      "requiresLottery": false,
+      "loanTypes": ["FHA", "VA", "Conventional"],
+      "detailPageUrl": "/programs/sd-black-homebuyers",
+      "lastUpdated": "2026-04-15",
+      "notes": "Targeted program to address the homeownership gap for Black/African American homebuyers in San Diego County. Must complete homebuyer education. Check program website for current funding availability and application periods."
+    }
+  ]
+}

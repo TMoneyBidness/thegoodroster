@@ -1,0 +1,24 @@
+---
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  text?: string;
+  context?: string;
+}
+
+const {
+  text = `Connect with a local ${siteConfig.partnerTerminology.toLowerCase().replace('community ', '')}`,
+  context,
+} = Astro.props;
+---
+<div class="bg-neutral-50 border border-neutral-200 rounded-xl p-6 text-center">
+  {context && (
+    <p class="text-body text-neutral-600 mb-3">{context}</p>
+  )}
+  <a href="/community-partners/" class="btn-primary no-underline">
+    {text}
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  </a>
+</div>

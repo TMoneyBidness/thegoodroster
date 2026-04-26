@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  income: string;
+  savings: string;
+  result: string;
+  details?: string[];
+}
+
+const { title, income, savings, result, details = [] } = Astro.props;
+---
+<div class="bg-warm-50 border border-warm-200 rounded-xl p-6 my-6">
+  <h4 class="font-bold text-primary-800 mb-3 flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-warm-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+    </svg>
+    {title}
+  </h4>
+
+  <div class="grid grid-cols-2 gap-3 mb-4">
+    <div class="bg-white rounded-lg p-3">
+      <p class="text-body-sm text-neutral-500">Annual income</p>
+      <p class="text-body font-bold text-neutral-800">{income}</p>
+    </div>
+    <div class="bg-white rounded-lg p-3">
+      <p class="text-body-sm text-neutral-500">Savings available</p>
+      <p class="text-body font-bold text-neutral-800">{savings}</p>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-lg p-4 border border-warm-200">
+    <p class="font-semibold text-neutral-800 mb-2">{result}</p>
+    {details.length > 0 && (
+      <ul class="space-y-1 text-body-sm text-neutral-600">
+        {details.map((detail) => (
+          <li class="flex items-start gap-2">
+            <span class="text-warm-500 mt-0.5">-</span>
+            {detail}
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+
+  <p class="mt-3 text-body-sm text-neutral-500 italic">
+    This is a simplified example for illustration. Your situation may differ.
+    <a href="/tools/affordability-calculator/" class="text-primary-600 hover:text-primary-700">Use our calculator</a> for a personalized estimate.
+  </p>
+</div>

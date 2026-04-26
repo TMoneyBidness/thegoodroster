@@ -1,0 +1,47 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  breadcrumbs?: BreadcrumbItem[];
+  canonicalUrl?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  wide?: boolean;
+}
+
+const { breadcrumbs = [], wide = false, ...layoutProps } = Astro.props;
+---
+<BaseLayout {...layoutProps}>
+  {breadcrumbs.length > 0 && (
+    <>
+      <BreadcrumbSchema items={breadcrumbs} />
+      <nav aria-label="Breadcrumb" class="container-content py-3 text-body-sm text-neutral-500">
+        <ol class="flex items-center gap-1.5 flex-wrap">
+          <li><a href="/" class="hover:text-primary-600 no-underline">Home</a></li>
+          {breadcrumbs.map((item, i) => (
+            <li class="flex items-center gap-1.5">
+              <span aria-hidden="true">/</span>
+              {i === breadcrumbs.length - 1 ? (
+                <span class="text-neutral-700 font-medium" aria-current="page">{item.label}</span>
+              ) : (
+                <a href={item.href} class="hover:text-primary-600 no-underline">{item.label}</a>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </>
+  )}
+
+  <div class={wide ? 'container-content' : 'container-prose'}>
+    <slot />
+  </div>
+</BaseLayout>

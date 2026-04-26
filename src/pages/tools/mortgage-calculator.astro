@@ -1,0 +1,74 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { siteConfig } from '../../config/site';
+import MortgageCalculator from '../../components/tools/MortgageCalculator.tsx';
+import PrimaryCTA from '../../components/cta/PrimaryCTA.astro';
+import PartnerListCTA from '../../components/cta/PartnerListCTA.astro';
+---
+<ToolLayout
+  title={`San Diego Mortgage Calculator (with Property Tax & Mello-Roos) | ${siteConfig.siteName}`}
+  description="Calculate your estimated monthly mortgage payment with San Diego-specific property tax rates, Mello-Roos, HOA, and homeowner's insurance."
+  toolName="Mortgage Calculator"
+>
+  <Fragment slot="tool">
+    <h1 class="text-h1 font-bold text-neutral-900 mb-3">San Diego Mortgage Calculator</h1>
+    <p class="text-body-lg text-neutral-600 mb-6">
+      Estimate your monthly payment including property tax, insurance, HOA, and Mello-Roos — pre-loaded with San Diego defaults.
+    </p>
+    <MortgageCalculator client:load />
+  </Fragment>
+
+  <!-- Educational content below calculator -->
+  <h2>How to use this calculator</h2>
+  <p>
+    This mortgage calculator is built specifically for San Diego homebuyers. It includes local factors that generic calculators miss — like Mello-Roos taxes (common in newer San Diego developments like Otay Ranch, Pacific Highlands Ranch, and parts of Carlsbad) and San Diego's effective property tax rate of approximately 1.25%.
+  </p>
+
+  <h2>Understanding each input</h2>
+
+  <h3>Home price</h3>
+  <p>
+    The purchase price of the home. In San Diego, the median home price is approximately $1 million, but first-time buyers frequently purchase condos and townhomes in the $400,000-$700,000 range, especially with FHA loans (which cover up to $1,077,550 in San Diego).
+  </p>
+
+  <h3>Down payment</h3>
+  <p>
+    The amount you pay upfront. This can be as low as 3% for conventional loans, 3.5% for FHA loans, or 0% for VA loans. If you put less than 20% down on a conventional loan, you'll pay private mortgage insurance (PMI).
+  </p>
+  <p>
+    Many San Diego buyers use <a href="/down-payment-assistance-san-diego/">down payment assistance programs</a> to cover part or all of their down payment. Programs like SDHC can provide up to 22% of the purchase price.
+  </p>
+
+  <h3>Interest rate</h3>
+  <p>
+    Your mortgage interest rate depends on your credit score, loan type, down payment, and market conditions. This calculator defaults to 6.75%, but your actual rate may differ. Contact a <a href="/community-partners/">local mortgage professional</a> for current rates based on your situation.
+  </p>
+
+  <h3>Property tax</h3>
+  <p>
+    San Diego's effective property tax rate averages about 1.25%, which includes the base Proposition 13 rate of 1% plus voter-approved bonds and assessments. Your actual rate depends on your specific property and location.
+  </p>
+
+  <h3>Mello-Roos</h3>
+  <p>
+    Mello-Roos is a special tax district assessment common in newer San Diego developments. It funds infrastructure like roads, schools, and parks in newer communities. It can add $1,000 to $5,000+ per year to your housing costs. Older, established neighborhoods typically have no Mello-Roos. Read our <a href="/guides/">Mello-Roos guide</a> for details.
+  </p>
+
+  <h3>PMI / MIP</h3>
+  <p>
+    Private Mortgage Insurance (PMI) is required on conventional loans with less than 20% down. It typically costs 0.3-1.5% of the loan amount annually. FHA loans have their own version called Mortgage Insurance Premium (MIP), which includes an upfront premium of 1.75% plus an annual premium of 0.55%.
+  </p>
+
+  <h2>What this calculator doesn't include</h2>
+  <p>
+    This calculator provides estimates for planning purposes. It does not include maintenance costs (budget 1-2% of home value per year), utility costs, potential special assessments, or flood/earthquake insurance. Your actual closing costs are also separate — use our <a href="/tools/closing-cost-estimator/">closing cost estimator</a> for those.
+  </p>
+
+  <div class="mt-8">
+    <PrimaryCTA text="See what you might qualify for" href="/tools/affordability-calculator/" />
+  </div>
+
+  <div class="mt-8">
+    <PartnerListCTA context="Want personalized numbers based on your specific situation?" />
+  </div>
+</ToolLayout>

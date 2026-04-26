@@ -1,0 +1,25 @@
+---
+interface Props {
+  date: string;
+  sources?: string[];
+}
+
+const { date, sources = [] } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+});
+---
+<div class="flex items-center gap-2 text-body-sm text-neutral-500 mb-4">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>Updated {formattedDate}</span>
+  {sources.length > 0 && (
+    <>
+      <span aria-hidden="true">|</span>
+      <span>Sources: {sources.join(', ')}</span>
+    </>
+  )}
+</div>

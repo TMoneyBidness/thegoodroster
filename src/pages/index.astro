@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+import PrimaryCTA from '../components/cta/PrimaryCTA.astro';
+import ToolCTA from '../components/cta/ToolCTA.astro';
+import StickyMobileCTA from '../components/cta/StickyMobileCTA.astro';
+import KeyStatBlock from '../components/content/KeyStatBlock.astro';
+---
+<BaseLayout
+  title={`Free San Diego Homebuyer Resource | ${siteConfig.siteName}`}
+  description="Free educational resource for San Diego first-time homebuyers. Learn about loan programs, down payment assistance, and connect with local mortgage professionals."
+>
+  <!-- Organization + WebSite Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.siteName,
+    url: siteConfig.siteUrl,
+    description: `San Diego first-time homebuyer resource — guides, tools, and connections to licensed mortgage professionals.`,
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.companyName,
+      url: siteConfig.siteUrl,
+    },
+  })} />
+
+  <!-- ============ HERO ============ -->
+  <section class="section-padding" style="background: linear-gradient(135deg, var(--color-neutral-100) 0%, var(--color-neutral-50) 40%, var(--color-accent-50) 100%);">
+    <div class="container-content">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-display font-bold text-primary-900 mb-4">
+          Buying your first home in San Diego, made clearer
+        </h1>
+        <p class="text-body-lg text-neutral-600 mb-6 max-w-2xl mx-auto">
+          Use free affordability tools, closing cost estimates, local buyer guides, and loan program explainers. When you're ready, choose one licensed local mortgage professional to talk to.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+          <PrimaryCTA text="Start with the affordability calculator" href="/tools/affordability-calculator/" size="large" variant="accent" />
+          <a href="/loan-programs/" class="btn-secondary">Explore loan programs</a>
+        </div>
+        <p class="text-body-sm text-neutral-500 max-w-lg mx-auto">
+          You choose the professional. Your inquiry goes only to that person.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PATHWAY CARDS ============ -->
+  <section class="section-padding" style="background: white;">
+    <div class="container-content">
+      <h2 class="text-h2 font-bold text-primary-800 text-center mb-8">Where are you in your journey?</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <a href="/first-time-homebuyer-san-diego/" class="card group block text-center no-underline hover:border-accent-300">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 group-hover:bg-accent-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-primary-800 mb-2 group-hover:text-accent-700">I'm just exploring</h3>
+          <p class="text-body-sm text-neutral-500">Understand your options before talking to anyone</p>
+        </a>
+
+        <a href="/down-payment-assistance-san-diego/" class="card group block text-center no-underline hover:border-warm-300">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-warm-50 flex items-center justify-center text-warm-500 group-hover:bg-warm-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-primary-800 mb-2 group-hover:text-warm-600">I need help with down payment</h3>
+          <p class="text-body-sm text-neutral-500">Up to $150,000 in programs you may qualify for</p>
+        </a>
+
+        <a href="/loan-programs/va-loans-san-diego/" class="card group block text-center no-underline hover:border-primary-300">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 group-hover:bg-primary-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-primary-800 mb-2 group-hover:text-primary-600">I'm a veteran or military buyer</h3>
+          <p class="text-body-sm text-neutral-500">VA loans with zero down — SD is the #1 VA county</p>
+        </a>
+
+        <a href="/community-partners/" class="card group block text-center no-underline hover:border-green-300">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-green-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-primary-800 mb-2 group-hover:text-green-700">I'm ready to talk to someone</h3>
+          <p class="text-body-sm text-neutral-500">Choose one local expert who fits your situation</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEY STATS ============ -->
+  <section class="py-12" style="background: var(--color-neutral-100);">
+    <div class="container-content">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <KeyStatBlock stat="$150K" label="Max DPA available" source="CalHFA Dream For All" />
+        <KeyStatBlock stat="$1.08M" label="FHA loan limit (SD)" source="HUD, 2026" />
+        <KeyStatBlock stat="3.5%" label="Min FHA down payment" source="With 580+ credit score" />
+        <KeyStatBlock stat="7+" label="DPA programs in SD" source="City, County & State" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED TOOLS ============ -->
+  <section class="section-padding bg-white">
+    <div class="container-content">
+      <h2 class="text-h2 font-bold text-primary-800 text-center mb-3">Free calculators, estimators, and checklists</h2>
+      <p class="text-body text-neutral-500 text-center mb-8 max-w-xl mx-auto">
+        To help you understand your next step. Built with San Diego property tax, Mello-Roos, and DPA data.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <ToolCTA
+          title="Mortgage Calculator"
+          description="Estimate your monthly payment with SD property tax, Mello-Roos, and HOA"
+          href="/tools/mortgage-calculator/"
+          icon="calculator"
+        />
+        <ToolCTA
+          title="Affordability Calculator"
+          description="See how much home you can afford based on your income and debts"
+          href="/tools/affordability-calculator/"
+          icon="home"
+        />
+        <ToolCTA
+          title="Closing Cost Estimator"
+          description="Get an itemized estimate of your San Diego closing costs"
+          href="/tools/closing-cost-estimator/"
+          icon="currency"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY SD IS UNIQUE ============ -->
+  <section class="section-padding" style="background: linear-gradient(to bottom, var(--color-accent-50), var(--color-neutral-50));">
+    <div class="container-content max-w-3xl mx-auto">
+      <h2 class="text-h2 font-bold text-neutral-900 mb-6">Why San Diego is unique for first-time buyers</h2>
+      <div class="space-y-4 text-body text-neutral-700">
+        <p>
+          San Diego's housing market presents unique challenges — and unique opportunities. The median home price exceeds $1 million, but the FHA loan limit here is <strong>$1,077,550</strong>, one of the highest in the country. That means government-backed loans cover most of the market.
+        </p>
+        <p>
+          What most first-time buyers don't realize: San Diego has some of the most generous down payment assistance programs in California. Between city, county, and state programs, you could receive <strong>$10,000 to $150,000</strong> toward your down payment and closing costs.
+        </p>
+        <p>
+          There are also costs unique to San Diego you need to understand — like <a href="/guides/">Mello-Roos taxes</a> (common in newer developments), wildfire insurance considerations, and Proposition 13's impact on your property taxes.
+        </p>
+      </div>
+      <div class="mt-6">
+        <a href="/first-time-homebuyer-san-diego/" class="btn-secondary">Read the Complete Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section-padding bg-white">
+    <div class="container-content max-w-3xl mx-auto text-center">
+      <h2 class="text-h2 font-bold text-primary-800 mb-4">Getting mortgage help should feel like getting help</h2>
+      <p class="text-body text-neutral-600 mb-4">
+        Buying a home is already complicated. Finding someone to talk to should not be. TheGoodRoster helps you understand your options and choose one local expert when you're ready.
+      </p>
+      <p class="text-body-sm text-neutral-500 mb-6">
+        One expert. Picked by you. When you're ready.
+      </p>
+      <a href="/about/" class="text-accent-600 font-medium hover:text-accent-700">Learn more about how this works</a>
+    </div>
+  </section>
+
+  <StickyMobileCTA />
+</BaseLayout>

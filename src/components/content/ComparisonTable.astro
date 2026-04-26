@@ -1,0 +1,49 @@
+---
+interface Props {
+  headers: string[];
+  rows: string[][];
+  caption?: string;
+  highlightColumn?: number;
+}
+
+const { headers, rows, caption, highlightColumn } = Astro.props;
+---
+<div class="overflow-x-auto mb-8">
+  <table class="w-full text-body-sm border-collapse">
+    {caption && <caption class="text-left text-body font-semibold text-neutral-800 mb-3">{caption}</caption>}
+    <thead>
+      <tr>
+        {headers.map((header, i) => (
+          <th
+            scope="col"
+            class:list={[
+              'px-4 py-3 text-left font-semibold border-b-2',
+              i === highlightColumn
+                ? 'bg-accent-50 text-accent-700 border-accent-200'
+                : 'bg-primary-50 text-primary-700 border-primary-200',
+            ]}
+          >
+            {header}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr class="hover:bg-neutral-50 transition-colors">
+          {row.map((cell, i) => (
+            <td
+              class:list={[
+                'px-4 py-3 border-b border-neutral-100',
+                i === 0 ? 'font-medium text-neutral-800' : 'text-neutral-600',
+                i === highlightColumn ? 'bg-accent-50/50' : '',
+              ]}
+            >
+              <Fragment set:html={cell} />
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+---
+import { siteConfig } from '../../config/site';
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.companyName,
+  url: siteConfig.siteUrl,
+  description: `${siteConfig.siteName} helps San Diego first-time homebuyers navigate the mortgage process with educational guides, interactive tools, and connections to licensed local professionals.`,
+  areaServed: {
+    '@type': 'City',
+    name: 'San Diego',
+    sameAs: 'https://en.wikipedia.org/wiki/San_Diego',
+  },
+  ...(siteConfig.contactEmail && siteConfig.contactEmail !== '[CONTACT_EMAIL]'
+    ? { email: siteConfig.contactEmail }
+    : {}),
+  ...(siteConfig.contactPhone && siteConfig.contactPhone !== '[CONTACT_PHONE]'
+    ? { telephone: siteConfig.contactPhone }
+    : {}),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />

@@ -1,0 +1,28 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../config/site';
+---
+<PageLayout
+  title={`Free Homebuyer Workshops | ${siteConfig.siteName}`}
+  description="Free first-time homebuyer workshops in San Diego, hosted by ${siteConfig.companyName}. Learn about loan programs, DPA, and the buying process."
+  breadcrumbs={[{ label: 'Workshops', href: '/workshops/' }]}
+>
+  <div class="py-8 max-w-2xl">
+    <h1 class="text-h1 font-bold text-neutral-900 mb-4">Free Homebuyer Workshops</h1>
+    <p class="text-body-lg text-neutral-600 mb-8">
+      {siteConfig.companyName} hosts free first-time homebuyer workshops for San Diego residents.
+      Learn about loan programs, down payment assistance, and the homebuying process from local experts.
+    </p>
+
+    <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-8 text-center mb-8">
+      <h2 class="text-h3 font-semibold text-neutral-800 mb-3">Coming Soon</h2>
+      <p class="text-body text-neutral-600 mb-4">
+        Workshop schedule and RSVP system are being set up. Check back soon for upcoming events.
+      </p>
+      <p class="text-body-sm text-neutral-500">
+        In the meantime, explore our <a href="/first-time-homebuyer-san-diego/">complete homebuyer guide</a>
+        and <a href="/tools/">free tools</a>.
+      </p>
+    </div>
+  </div>
+</PageLayout>

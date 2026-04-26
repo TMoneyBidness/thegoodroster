@@ -1,0 +1,462 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema.astro';
+import ArticleSchema from '../components/seo/ArticleSchema.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import FAQAccordion from '../components/content/FAQAccordion.astro';
+import ComparisonTable from '../components/content/ComparisonTable.astro';
+import ProgramCard from '../components/content/ProgramCard.astro';
+import KeyStatBlock from '../components/content/KeyStatBlock.astro';
+import PrimaryCTA from '../components/cta/PrimaryCTA.astro';
+import PartnerListCTA from '../components/cta/PartnerListCTA.astro';
+import TrustBlock from '../components/trust/TrustBlock.astro';
+import EditorialBadge from '../components/trust/EditorialBadge.astro';
+import UpdatedNotice from '../components/content/UpdatedNotice.astro';
+import { siteConfig } from '../config/site';
+
+const title = `Down Payment Assistance Programs in San Diego (2026) | ${siteConfig.siteName}`;
+const description = 'Complete guide to every down payment assistance program available in San Diego County. SDHC, CalHFA, county, and nonprofit programs offering $10,000 to $150,000 in help for homebuyers.';
+const datePublished = '2026-01-15';
+const dateModified = '2026-04-15';
+const canonicalUrl = `${siteConfig.siteUrl}/down-payment-assistance-san-diego/`;
+
+const breadcrumbs = [
+  { label: 'Down Payment Assistance San Diego', href: '/down-payment-assistance-san-diego/' },
+];
+
+const faqItems = [
+  {
+    question: 'How much down payment assistance can I get in San Diego?',
+    answer: 'Depending on your income, location, and the programs you qualify for, you could receive between $10,000 and $150,000 in down payment assistance. The largest single program is CalHFA Dream For All, which offers up to 20% of the purchase price with a maximum of $150,000. Local SDHC programs can provide up to 22% of the purchase price plus a $10,000 grant.',
+  },
+  {
+    question: 'Do I have to be a first-time homebuyer to get down payment assistance?',
+    answer: 'Most programs require first-time buyer status, which HUD defines as someone who has not owned a home in the past three years. However, the GSFA Platinum program does not require first-time buyer status. If you owned a home more than three years ago, you may qualify as a first-time buyer again under HUD rules.',
+  },
+  {
+    question: 'Do I have to pay back down payment assistance?',
+    answer: 'It depends on the program. Some offer forgivable loans that are waived after you live in the home for a set period, typically five to ten years. Others are deferred loans with no monthly payments, but the balance comes due when you sell, refinance, or move out. CalHFA Dream For All requires you to repay the original amount plus a share of your home appreciation. A few programs offer outright grants that never need to be repaid.',
+  },
+  {
+    question: 'What income limits apply to San Diego DPA programs?',
+    answer: 'Income limits vary by program and are typically tied to the Area Median Income for San Diego County. SDHC Low-Income programs cap at 80% AMI (roughly $82,000 for a family of four). SDHC Middle-Income goes up to 150% AMI (roughly $154,000). CalHFA programs have their own income limits that vary by county and household size. Check each program for current limits.',
+  },
+  {
+    question: 'Can I combine multiple DPA programs?',
+    answer: 'In some cases, yes. For example, you may be able to combine a CalHFA first mortgage with the CalHFA MyHome assistance program. Some SDHC programs include both a deferred loan and a grant as part of one package. However, you generally cannot stack two primary DPA programs from different agencies on the same loan. A DPA-experienced loan officer can help you figure out the best combination.',
+  },
+  {
+    question: 'How long does it take to get approved for DPA?',
+    answer: 'Most DPA programs add 15 to 30 days to the standard loan timeline. SDHC programs typically take 45 to 60 days from application to closing. CalHFA loans usually close in 30 to 45 days. Start the application process early, ideally before you begin house hunting, so the DPA approval does not delay your purchase.',
+  },
+  {
+    question: 'Do I need a homebuyer education course?',
+    answer: 'Yes, nearly all DPA programs require you to complete a HUD-approved homebuyer education course. These courses cover budgeting, the loan process, and homeownership responsibilities. Most are available online and take about six to eight hours. Some programs accept eHome America, Framework, or local HUD-approved counseling agencies.',
+  },
+  {
+    question: 'I live outside the City of San Diego. Can I still get DPA?',
+    answer: 'Yes. While SDHC programs are limited to properties within the City of San Diego, the San Diego County DCCA/CalHome program specifically serves buyers in unincorporated county areas and participating cities outside the City of San Diego. CalHFA and GSFA programs are available statewide, so they work anywhere in the county.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  ogType="article"
+  article={{ publishedTime: datePublished, modifiedTime: dateModified }}
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <ArticleSchema
+    title="Down Payment Assistance Programs in San Diego County"
+    description={description}
+    datePublished={datePublished}
+    dateModified={dateModified}
+  />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center gap-2 text-body-sm text-neutral-500">
+        <li><a href="/" class="hover:text-primary-600">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-neutral-800 font-medium">Down Payment Assistance San Diego</li>
+      </ol>
+    </nav>
+
+    <!-- Above the fold -->
+    <header class="mb-10">
+      <h1 class="mb-4">Down Payment Assistance Programs in San Diego County</h1>
+
+      <p class="text-body-lg text-neutral-600 mb-4">
+        <strong>$10,000 to $150,000 in down payment help</strong> may be available to you. San Diego offers
+        more assistance programs than almost any other city in California.
+      </p>
+
+      <div class="mb-4">
+        <PrimaryCTA text="Use the DPA Finder Tool" href="/tools/dpa-finder/" size="large" />
+      </div>
+
+      <TrustBlock sources={["SDHC", "CalHFA", "San Diego County HCD"]} />
+
+      <div class="mt-4">
+        <UpdatedNotice date="2026-04-15" sources={["SDHC", "CalHFA", "San Diego County HCD"]} />
+        <EditorialBadge dateModified={dateModified} />
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <div class="prose">
+
+      <!-- Section 1 -->
+      <section id="what-is-dpa">
+        <h2>What is down payment assistance?</h2>
+
+        <p>
+          Down payment assistance (DPA) is money from government agencies, state housing authorities, or nonprofit
+          organizations that helps you cover your down payment and, in many cases, your closing costs. The goal is
+          simple: remove the biggest barrier to homeownership, which is saving up enough cash to get through the
+          front door.
+        </p>
+
+        <p>DPA comes in three main forms:</p>
+
+        <ul>
+          <li>
+            <strong>Grants:</strong> Free money that you never have to repay. These are relatively rare and
+            usually come in smaller amounts, such as the $10,000 grants included with some SDHC programs.
+          </li>
+          <li>
+            <strong>Deferred loans:</strong> Second mortgages with no monthly payments. You do not pay anything
+            until you sell the home, refinance, or stop living in it as your primary residence. At that point,
+            the balance comes due. Most DPA programs in San Diego use this structure.
+          </li>
+          <li>
+            <strong>Forgivable loans:</strong> Similar to deferred loans, but the balance is reduced over time.
+            If you live in the home long enough, typically five to ten years, the loan is forgiven entirely and
+            you owe nothing.
+          </li>
+        </ul>
+
+        <p>
+          Some programs also include a <strong>shared appreciation</strong> component, meaning you repay the original
+          assistance plus a percentage of the increase in your home's value when you sell. CalHFA Dream For All
+          uses this model.
+        </p>
+
+        <p>
+          DPA is not charity. These programs exist because stable homeownership strengthens communities, builds
+          household wealth, and reduces reliance on government services over time. They are funded by federal
+          HOME and CDBG grants, state housing bond proceeds, and local tax revenue.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="programs-at-a-glance">
+        <h2>All San Diego DPA programs at a glance</h2>
+
+        <p>
+          Here is every major down payment assistance program available to San Diego County homebuyers in one table.
+          Scroll right on mobile to see all columns.
+        </p>
+
+        <ComparisonTable
+          caption="San Diego County down payment assistance programs (2026)"
+          headers={["Program", "Max Assistance", "Income Limit", "Geography", "FTHB Required?"]}
+          rows={[
+            ["SDHC Low-Income", "22% + $10K grant", "≤80% AMI", "City of San Diego", "Yes"],
+            ["SDHC Middle-Income", "$40K + $10K grant", "80–150% AMI", "City of San Diego", "Yes"],
+            ["County DCCA/CalHome", "17% + $10K grant", "≤80% AMI", "County (not City)", "Yes"],
+            ["CalHFA MyHome", "3.5% (FHA) / 3% (conv)", "Varies by county", "Statewide", "Yes"],
+            ["CalHFA Dream For All", "20% (max $150K)", "Varies by county", "Statewide (lottery)", "Yes"],
+            ["GSFA Platinum", "5.5%", "Varies by county", "Statewide", "<strong>No</strong>"],
+            ["SD Black Homebuyers", "$40K", "≤120% AMI", "San Diego County", "Yes"],
+          ]}
+        />
+      </section>
+
+      <!-- Section 3 -->
+      <section id="program-details">
+        <h2>Program details</h2>
+
+        <p>
+          Below you will find the key details for each program. Eligibility rules, income limits, and funding
+          availability change periodically, so always verify current terms before applying.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-6 my-8 not-prose">
+          <ProgramCard
+            name="SDHC Low-Income Purchase Assistance"
+            agency="San Diego Housing Commission"
+            maxAssistance="22% of purchase price + $10,000 grant"
+            geography="City of San Diego only"
+            incomeLimit="≤80% AMI (~$82,000 for family of 4)"
+            requiresFTHB={true}
+            highlight={true}
+            detailUrl="/loan-programs/sdhc-low-income/"
+          />
+
+          <ProgramCard
+            name="SDHC Middle-Income Purchase Assistance"
+            agency="San Diego Housing Commission"
+            maxAssistance="$40,000 deferred loan + $10,000 grant"
+            geography="City of San Diego only"
+            incomeLimit="80–150% AMI (~$82K–$154K for family of 4)"
+            requiresFTHB={true}
+            highlight={true}
+            detailUrl="/loan-programs/sdhc-middle-income/"
+          />
+
+          <ProgramCard
+            name="County DCCA / CalHome"
+            agency="San Diego County Housing & Community Development"
+            maxAssistance="17% of purchase price + $10,000 grant"
+            geography="Unincorporated SD County and participating cities (not City of SD)"
+            incomeLimit="≤80% AMI (~$82,000 for family of 4)"
+            requiresFTHB={true}
+            detailUrl="/loan-programs/county-dcca-calhome/"
+          />
+
+          <ProgramCard
+            name="CalHFA MyHome Assistance"
+            agency="California Housing Finance Agency"
+            maxAssistance="3.5% (FHA) or 3% (conventional) of purchase price"
+            geography="Statewide — works anywhere in San Diego County"
+            incomeLimit="Varies by county and household size"
+            requiresFTHB={true}
+            detailUrl="/loan-programs/calhfa-myhome/"
+          />
+
+          <ProgramCard
+            name="CalHFA Dream For All"
+            agency="California Housing Finance Agency"
+            maxAssistance="20% of purchase price (max $150,000)"
+            geography="Statewide — lottery-based, funds limited"
+            incomeLimit="Varies by county and household size"
+            requiresFTHB={true}
+            highlight={true}
+            detailUrl="/loan-programs/calhfa-dream-for-all/"
+          />
+
+          <ProgramCard
+            name="GSFA Platinum"
+            agency="Golden State Finance Authority"
+            maxAssistance="5.5% of loan amount"
+            geography="Statewide — works anywhere in San Diego County"
+            incomeLimit="Varies by county"
+            requiresFTHB={false}
+            detailUrl="/loan-programs/gsfa-platinum/"
+          />
+
+          <ProgramCard
+            name="San Diego Black Homebuyers Program"
+            agency="San Diego County / LISC San Diego"
+            maxAssistance="$40,000"
+            geography="San Diego County"
+            incomeLimit="≤120% AMI (~$123,000 for family of 4)"
+            requiresFTHB={true}
+            detailUrl="/loan-programs/sd-black-homebuyers/"
+          />
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="stacking-programs">
+        <h2>Can you stack multiple programs?</h2>
+
+        <p>
+          One of the most common questions we hear is: "Can I use more than one DPA program at the same time?"
+          The short answer is sometimes, but the rules are specific.
+        </p>
+
+        <p>Here is how it generally works:</p>
+
+        <ul>
+          <li>
+            <strong>Within a single agency, yes.</strong> SDHC programs typically bundle a deferred loan with
+            a grant as part of one package. That is built into the program design. Similarly, CalHFA often
+            pairs a first mortgage product (like CalHFA FHA) with the MyHome assistance program as an integrated package.
+          </li>
+          <li>
+            <strong>Across agencies, usually no.</strong> You generally cannot combine an SDHC program with a
+            CalHFA program or stack two primary DPA sources from different agencies. The first mortgage lender and
+            the DPA provider need to be compatible, and most programs have subordination requirements that conflict
+            with each other.
+          </li>
+          <li>
+            <strong>GSFA is more flexible.</strong> Because GSFA Platinum works as a grant applied to the loan
+            terms rather than a recorded second lien, it may be compatible with some other programs. Ask your
+            lender about specific combinations.
+          </li>
+        </ul>
+
+        <p>
+          The best approach is to work with a loan officer who has specific experience with San Diego DPA programs.
+          They can model different combinations and tell you which option puts the most money in your pocket.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="monthly-payment-impact">
+        <h2>How DPA affects your monthly payment</h2>
+
+        <p>
+          One of the most appealing features of most San Diego DPA programs is that they do not increase your
+          monthly payment. Here is why.
+        </p>
+
+        <p>
+          <strong>Deferred loans</strong> have no monthly payments. The SDHC programs, County DCCA, and CalHFA
+          MyHome all use deferred second mortgages. You receive the money at closing, and it sits quietly as a
+          lien on your property. You do not make any payments on it. The balance comes due only when you sell,
+          refinance, or no longer live in the home.
+        </p>
+
+        <p>
+          <strong>Grants</strong> never have to be repaid, so they have zero impact on your monthly payment.
+          The $10,000 grants from SDHC and County DCCA programs are free money that reduces what you need to
+          bring to the closing table.
+        </p>
+
+        <p>
+          <strong>GSFA Platinum</strong> works differently. The assistance is structured as a slightly higher
+          interest rate on your first mortgage instead of a separate lien. Your monthly payment may be slightly
+          higher than a no-DPA loan at the market rate, but you get 5.5% of the loan amount to help with your
+          down payment and closing costs. For many buyers, this trade-off is worth it.
+        </p>
+
+        <p>
+          <strong>CalHFA Dream For All</strong> also has no monthly payment, but it includes a shared appreciation
+          component. When you sell, you repay the original assistance amount plus 20% of the gain in your home's
+          value. If your home appreciates significantly, this can be a substantial amount. Plan accordingly.
+        </p>
+
+        <p>
+          The bottom line: DPA generally helps you get into the home without increasing what you pay each month.
+          The real cost comes later, when you sell or refinance.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="repayment">
+        <h2>Do you have to pay it back?</h2>
+
+        <p>
+          This is the question everyone asks, and the answer depends entirely on which program you use.
+          Here is a clear breakdown:
+        </p>
+
+        <h3>Programs with grants (no repayment)</h3>
+        <p>
+          The $10,000 grants included with SDHC Low-Income, SDHC Middle-Income, and County DCCA programs are
+          outright gifts. You never repay them under any circumstances. They reduce your out-of-pocket costs at
+          closing, period.
+        </p>
+
+        <h3>Deferred loans (repay when you sell or move)</h3>
+        <p>
+          SDHC deferred loans, County DCCA deferred loans, and CalHFA MyHome are all silent seconds with no
+          monthly payments. You repay the full balance when you:
+        </p>
+        <ul>
+          <li>Sell the home</li>
+          <li>Refinance the first mortgage</li>
+          <li>Transfer ownership</li>
+          <li>Stop using the home as your primary residence</li>
+        </ul>
+        <p>
+          Some of these loans are also forgivable. SDHC loans, for example, may be partially or fully forgiven
+          after a set number of years if you continue to meet program requirements. Check the specific terms of
+          your loan agreement.
+        </p>
+
+        <h3>Shared appreciation loans (repay plus a share of gains)</h3>
+        <p>
+          CalHFA Dream For All requires you to repay the original loan amount plus 20% of the appreciation in
+          your home's value. For example, if you received $100,000 in assistance and your home increased in
+          value by $200,000, you would repay $100,000 plus $40,000 (20% of $200,000), totaling $140,000.
+          If your home does not appreciate, you only repay the original amount.
+        </p>
+
+        <h3>Rate-based assistance (nothing to repay)</h3>
+        <p>
+          GSFA Platinum provides assistance through a slightly higher interest rate rather than a separate loan.
+          There is no second lien and nothing to repay beyond your regular monthly mortgage payment.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="income-limits">
+        <h2>Income limits explained</h2>
+
+        <p>
+          Almost all DPA programs use <strong>Area Median Income (AMI)</strong> to determine eligibility.
+          AMI is the midpoint income for all households in San Diego County, adjusted for household size.
+          The U.S. Department of Housing and Urban Development (HUD) publishes updated AMI figures annually.
+        </p>
+
+        <KeyStatBlock
+          stat="~$103,000"
+          label="Area Median Income for San Diego County (family of 4)"
+          source="HUD, 2025"
+        />
+
+        <p>
+          When a program says it serves households at "80% AMI," that means your household income must be at
+          or below 80% of the median. Here is what that looks like in practice for a family of four:
+        </p>
+
+        <ul>
+          <li><strong>80% AMI:</strong> roughly $82,000 — eligible for SDHC Low-Income, County DCCA</li>
+          <li><strong>120% AMI:</strong> roughly $123,000 — eligible for SD Black Homebuyers Program</li>
+          <li><strong>150% AMI:</strong> roughly $154,000 — eligible for SDHC Middle-Income</li>
+        </ul>
+
+        <p>
+          These figures adjust for household size. A single person buying alone will have a lower income limit
+          than a family of four. The income counted is your total gross household income, meaning everyone who
+          will be on the mortgage is included.
+        </p>
+
+        <p>
+          CalHFA and GSFA programs use their own income limit tables that differ from AMI-based calculations.
+          CalHFA limits are published on their website and vary by county. In San Diego County, CalHFA income
+          limits tend to be generous enough that households earning up to $150,000 to $200,000 may qualify,
+          depending on the specific program and household size.
+        </p>
+
+        <p>
+          Income limits change annually, so always verify the current numbers before assuming you qualify or
+          do not qualify. Our <a href="/tools/dpa-finder/">DPA Finder tool</a> uses the latest published limits.
+        </p>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="faq">
+        <h2>Frequently asked questions about down payment assistance</h2>
+
+        <p>
+          Here are answers to the most common questions about down payment assistance in San Diego.
+        </p>
+
+        <FAQAccordion items={faqItems} />
+      </section>
+
+      <!-- Closing CTAs -->
+      <section class="mt-12">
+        <div class="bg-primary-50 border border-primary-100 rounded-xl p-8 text-center mb-8">
+          <h2 class="text-h3 mb-3">Find out which programs you qualify for</h2>
+          <p class="text-body text-neutral-600 mb-6 max-w-xl mx-auto">
+            Answer a few questions about your income, savings, and where you want to buy.
+            Our DPA Finder tool matches you with every program you may be eligible for.
+          </p>
+          <PrimaryCTA text="Use the DPA Finder Tool" href="/tools/dpa-finder/" size="large" />
+        </div>
+
+        <PartnerListCTA context="Need help navigating these programs? Connect with a San Diego mortgage professional who specializes in down payment assistance." />
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>

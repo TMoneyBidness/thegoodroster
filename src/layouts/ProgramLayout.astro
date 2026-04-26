@@ -1,0 +1,66 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema.astro';
+import ArticleSchema from '../components/seo/ArticleSchema.astro';
+import EditorialBadge from '../components/trust/EditorialBadge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  programName: string;
+  keyStat?: string;
+  datePublished: string;
+  dateModified?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description,
+  programName,
+  keyStat,
+  datePublished,
+  dateModified,
+  ...rest
+} = Astro.props;
+---
+<BaseLayout title={title} description={description} ogType="article" {...rest}>
+  <BreadcrumbSchema items={[
+    { label: 'Loan Programs', href: '/loan-programs/' },
+    { label: programName, href: Astro.url.pathname },
+  ]} />
+  <ArticleSchema
+    title={title}
+    description={description}
+    datePublished={datePublished}
+    dateModified={dateModified}
+  />
+
+  <nav aria-label="Breadcrumb" class="container-content py-3 text-body-sm text-neutral-500">
+    <ol class="flex items-center gap-1.5 flex-wrap">
+      <li><a href="/" class="hover:text-primary-600 no-underline">Home</a></li>
+      <li class="flex items-center gap-1.5">
+        <span aria-hidden="true">/</span>
+        <a href="/loan-programs/" class="hover:text-primary-600 no-underline">Loan Programs</a>
+      </li>
+      <li class="flex items-center gap-1.5">
+        <span aria-hidden="true">/</span>
+        <span class="text-neutral-700 font-medium" aria-current="page">{programName}</span>
+      </li>
+    </ol>
+  </nav>
+
+  <article class="container-prose py-8">
+    <header class="mb-8">
+      <h1 class="text-h1 font-bold text-neutral-900 mb-3">{title}</h1>
+      {keyStat && (
+        <p class="text-body-lg text-primary-700 font-medium mb-4">{keyStat}</p>
+      )}
+      <EditorialBadge dateModified={dateModified || datePublished} />
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

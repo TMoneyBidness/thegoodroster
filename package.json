@@ -1,0 +1,39 @@
+{
+  "name": "sdhomestart",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "dev:workers": "wrangler dev workers/lead-router/src/index.ts --config workers/lead-router/wrangler.toml",
+    "deploy:workers": "wrangler deploy --config workers/lead-router/wrangler.toml",
+    "test": "vitest",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "astro": "^4.0.0",
+    "@astrojs/cloudflare": "^9.0.0",
+    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/react": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "tailwindcss": "^3.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.0",
+    "ulid": "^2.3.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0",
+    "@cloudflare/workers-types": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "prettier": "^3.0.0",
+    "eslint": "^8.0.0",
+    "@astrojs/check": "^0.5.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,128 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../config/site';
+import partners from '../data/partners.json';
+import PartnerConnectForm from '../components/partners/PartnerConnectForm.tsx';
+
+const activePartners = partners.filter((p) => p.isActive);
+---
+<PageLayout
+  title={`Community Partners | ${siteConfig.siteName}`}
+  description={`Connect with licensed mortgage professionals serving San Diego. You choose who to contact — ${siteConfig.siteName} does not assign or route on your behalf.`}
+  breadcrumbs={[{ label: 'Community Partners', href: '/community-partners/' }]}
+  wide={true}
+>
+  <!-- Hero -->
+  <div class="py-12 text-center max-w-3xl mx-auto">
+    <h1 class="text-h1 font-bold text-primary-800 mb-4">
+      Choose a mortgage professional who fits your situation
+    </h1>
+    <p class="text-body-lg text-neutral-600 mb-3">
+      Browse a small roster of licensed local professionals. Each one has a clear specialty, so you can choose who makes sense for your goals.
+    </p>
+    <p class="text-body-sm text-neutral-500">
+      When you connect, your inquiry goes only to the person you choose.
+    </p>
+  </div>
+
+  <!-- Community Partners listing -->
+  <div class="max-w-4xl mx-auto mb-16">
+    <p class="text-body text-neutral-600 mb-2">A small roster of licensed local experts with clear specialties.</p>
+    <p class="text-body-sm text-neutral-400 mb-8">Roster order is randomized. Professionals are not ranked by payment.</p>
+
+    <div class="space-y-8">
+      {activePartners.map((partner) => (
+        <div class="bg-white border border-neutral-200 rounded-xl shadow-sm overflow-hidden" id={`partner-${partner.id}`}>
+          <!-- Partner info header -->
+          <div class="p-6 border-b border-neutral-100">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div>
+                <h3 class="text-h3 font-bold text-primary-800 mb-1">
+                  {partner.name}
+                </h3>
+                <p class="text-body-sm text-neutral-600">{partner.legalEntityName}</p>
+                <p class="text-body-sm text-neutral-500">
+                  NMLS#
+                  <a
+                    href={`https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/${partner.nmls}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="underline"
+                  >{partner.nmls}</a>
+                  {partner.entityNmls && (
+                    <> | Entity NMLS#
+                      <a
+                        href={`https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/${partner.entityNmls}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="underline"
+                      >{partner.entityNmls}</a>
+                    </>
+                  )}
+                </p>
+                <p class="text-body-sm text-neutral-500 mt-1">
+                  {partner.yearsExperience}+ years experience
+                  {partner.languages.length > 1 && <> &middot; Speaks {partner.languages.join(', ')}</>}
+                  {partner.address && <> &middot; {partner.address}</>}
+                </p>
+                {partner.stateLicenses && (
+                  <p class="text-body-sm text-neutral-400 mt-0.5">{partner.stateLicenses}</p>
+                )}
+              </div>
+
+              <!-- Direct call (always available, no consent needed for outbound) -->
+              <div class="flex-shrink-0">
+                <a href={`tel:${partner.phone}`} class="btn-secondary text-body-sm py-2 px-4">
+                  Call {partner.phone}
+                </a>
+              </div>
+            </div>
+
+            <!-- Specializations -->
+            <div class="flex flex-wrap gap-2 mt-3">
+              {partner.specializations.map((spec) => (
+                <span class="inline-block bg-accent-50 text-accent-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                  {spec}
+                </span>
+              ))}
+            </div>
+
+            <p class="text-body text-neutral-600 mt-3">{partner.bio}</p>
+          </div>
+
+          <!-- Per-professional consent + contact form -->
+          <div class="bg-neutral-50 p-6">
+            <PartnerConnectForm
+              client:visible
+              partnerId={partner.id}
+              partnerName={partner.name}
+              partnerNmls={partner.nmls}
+              partnerLegalEntity={partner.legalEntityName}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- How TheGoodRoster works (§20) -->
+  <div class="max-w-3xl mx-auto mb-12 px-4">
+    <details class="bg-neutral-100 rounded-xl overflow-hidden" open>
+      <summary class="p-6 cursor-pointer font-semibold text-primary-800 text-h3 select-none">How TheGoodRoster works</summary>
+      <div class="px-6 pb-6 space-y-3 text-body-sm text-neutral-600">
+        <p>
+          TheGoodRoster is not a mortgage lender, broker, or loan originator. We publish local homebuyer guides, tools, and a small roster of licensed mortgage professionals.
+        </p>
+        <p>
+          If you choose to contact a professional, your inquiry goes only to that person. The decision to move forward with them is entirely yours.
+        </p>
+        <p>
+          Some listed professionals pay to participate. The choice of who you contact is yours alone, and the order professionals appear is randomized on every visit.
+        </p>
+        <p class="text-neutral-500">
+          <a href="/privacy/">Privacy Policy</a> · <a href="/privacy/#do-not-sell">Your Privacy Choices</a> · <a href="/disclaimers/">Disclaimers</a>
+        </p>
+      </div>
+    </details>
+  </div>
+</PageLayout>

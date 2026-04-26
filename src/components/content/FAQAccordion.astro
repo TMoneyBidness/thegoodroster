@@ -1,0 +1,36 @@
+---
+import FAQSchema from '../seo/FAQSchema.astro';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+  includeSchema?: boolean;
+}
+
+const { items, includeSchema = true } = Astro.props;
+---
+{includeSchema && <FAQSchema items={items} />}
+
+<div class="space-y-3">
+  {items.map((item, index) => (
+    <details class="group border border-neutral-200 rounded-lg overflow-hidden" id={`faq-${index}`}>
+      <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer select-none bg-white hover:bg-neutral-50 transition-colors">
+        <h3 class="text-body font-semibold text-neutral-800 text-left">{item.question}</h3>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 flex-shrink-0 text-neutral-400 group-open:rotate-180 transition-transform duration-200"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="px-5 pb-4 text-body text-neutral-600 leading-relaxed">
+        <p>{item.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>

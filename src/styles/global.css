@@ -1,0 +1,208 @@
+@import './tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply text-neutral-800;
+    background-color: var(--color-neutral-50);
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  /* Serif headings for H1/H2, sans-serif for H3+ (per research) */
+  h1, h2 {
+    font-family: var(--font-heading);
+    @apply text-primary-800 font-bold;
+    letter-spacing: -0.01em;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    @apply text-primary-800 font-bold;
+  }
+
+  h1 { font-size: var(--text-h1); }
+  h2 { font-size: var(--text-h2); }
+  h3 { font-size: var(--text-h3); }
+
+  a {
+    @apply text-accent-600 hover:text-accent-700;
+    transition: color var(--transition-fast);
+  }
+
+  a:focus-visible {
+    @apply outline-none ring-2 ring-accent-400 ring-offset-2 rounded-sm;
+  }
+
+  /* Prose styles for MDX content */
+  .prose h2 {
+    @apply mt-12 mb-4 pb-2 border-b border-neutral-200;
+  }
+
+  .prose h3 {
+    @apply mt-8 mb-3;
+  }
+
+  .prose p {
+    @apply mb-4 max-w-prose;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose strong {
+    @apply font-semibold text-primary-800;
+  }
+
+  .prose table {
+    @apply w-full mb-6 text-body-sm;
+  }
+
+  .prose thead th {
+    @apply px-4 py-3 text-left font-semibold text-primary-700 border-b-2 border-accent-200;
+    background-color: var(--color-accent-50);
+  }
+
+  .prose tbody td {
+    @apply px-4 py-3 border-b border-neutral-100;
+  }
+
+  .prose tbody tr:nth-child(even) {
+    background-color: var(--color-neutral-100);
+  }
+
+  .prose tbody tr:hover {
+    background-color: var(--color-accent-50);
+    transition: background-color var(--transition-fast);
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply max-w-content mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-prose {
+    @apply max-w-prose mx-auto px-4 sm:px-6;
+  }
+
+  /* Primary CTA — teal, the action color */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg
+           text-white font-semibold;
+    background: linear-gradient(to bottom, var(--color-accent-500), var(--color-accent-600));
+    box-shadow: var(--shadow-sm), inset 0 1px 0 rgb(255 255 255 / 0.1);
+    transition: all var(--transition-base);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(to bottom, var(--color-accent-600), var(--color-accent-700));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-primary:focus-visible {
+    @apply outline-none ring-2 ring-accent-400 ring-offset-2;
+  }
+
+  /* Secondary CTA — navy outline */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg
+           text-primary-700 font-semibold
+           border-2 border-primary-200;
+    background: white;
+    transition: all var(--transition-base);
+  }
+  .btn-secondary:hover {
+    @apply border-primary-300;
+    background: var(--color-primary-50);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-secondary:focus-visible {
+    @apply outline-none ring-2 ring-primary-400 ring-offset-2;
+  }
+
+  /* Accent CTA — warm gold for secondary actions */
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg
+           font-semibold;
+    background: linear-gradient(to bottom, var(--color-warm-300), var(--color-warm-400));
+    color: var(--color-primary-900);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+  .btn-accent:hover {
+    background: linear-gradient(to bottom, var(--color-warm-400), var(--color-warm-500));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+  .btn-accent:focus-visible {
+    @apply outline-none ring-2 ring-offset-2;
+    --tw-ring-color: var(--color-warm-400);
+  }
+
+  /* Cards — warm background with lift on hover */
+  .card {
+    @apply rounded-xl border border-neutral-200 p-6;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--color-neutral-300);
+  }
+
+  .section-padding {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+  }
+
+  .block-spacing {
+    margin-bottom: var(--spacing-block);
+  }
+
+  /* Fade-up animation for section entry */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+/* Accessibility: respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

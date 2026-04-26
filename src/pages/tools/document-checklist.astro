@@ -1,0 +1,72 @@
+---
+/**
+ * Document Checklist Tool Page
+ * Note: The interactive Document Checklist Generator is Phase 2.
+ * For now, this page provides a static checklist.
+ */
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { siteConfig } from '../../config/site';
+import PartnerListCTA from '../../components/cta/PartnerListCTA.astro';
+---
+<ToolLayout
+  title={`Mortgage Document Checklist for San Diego Buyers | ${siteConfig.siteName}`}
+  description="Complete checklist of documents you'll need for your mortgage application in San Diego. Covers W-2, self-employed, FHA, VA, and conventional loans."
+  toolName="Document Checklist"
+>
+  <Fragment slot="tool">
+    <h1 class="text-h1 font-bold text-neutral-900 mb-3">Mortgage Document Checklist</h1>
+    <p class="text-body-lg text-neutral-600 mb-6">
+      Here's what you'll need to gather before applying for a mortgage. Having these ready can speed up your pre-approval process significantly.
+    </p>
+  </Fragment>
+
+  <h2>Income verification</h2>
+  <ul>
+    <li>Last 2 years of W-2 forms</li>
+    <li>Last 2 years of federal tax returns (all pages and schedules)</li>
+    <li>Last 30 days of pay stubs</li>
+    <li>If self-employed: profit and loss statement, business tax returns (2 years)</li>
+    <li>Other income documentation (Social Security, pension, rental income, alimony)</li>
+  </ul>
+
+  <h2>Asset documentation</h2>
+  <ul>
+    <li>Last 2 months of bank statements (all pages, all accounts)</li>
+    <li>Last 2 months of investment/retirement account statements</li>
+    <li>Gift letter (if receiving down payment help from family)</li>
+    <li>Documentation of any large deposits in the last 60 days</li>
+  </ul>
+
+  <h2>Identity and residence</h2>
+  <ul>
+    <li>Government-issued photo ID (driver's license or passport)</li>
+    <li>Social Security number</li>
+    <li>Current address and 2-year address history</li>
+    <li>If renting: landlord contact info, 12 months of rent payment history</li>
+  </ul>
+
+  <h2>Credit and debt</h2>
+  <ul>
+    <li>Authorization to pull credit report</li>
+    <li>Explanation letter for any derogatory credit items</li>
+    <li>Bankruptcy or foreclosure discharge papers (if applicable)</li>
+  </ul>
+
+  <h2>Additional for VA loans</h2>
+  <ul>
+    <li>Certificate of Eligibility (COE)</li>
+    <li>DD-214 (for veterans)</li>
+    <li>Statement of Service (for active duty)</li>
+  </ul>
+
+  <h2>Additional for DPA programs</h2>
+  <ul>
+    <li>Homebuyer education certificate (required by most DPA programs)</li>
+    <li>Proof of residency in San Diego (for city/county programs)</li>
+    <li>Additional income documentation per program requirements</li>
+  </ul>
+
+  <div class="mt-8">
+    <PartnerListCTA context="Not sure what you need? A local mortgage professional can walk you through exactly what's required for your situation." />
+  </div>
+</ToolLayout>

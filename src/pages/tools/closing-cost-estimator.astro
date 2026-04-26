@@ -1,0 +1,68 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { siteConfig } from '../../config/site';
+import ClosingCostEstimator from '../../components/tools/ClosingCostEstimator.tsx';
+import PartnerListCTA from '../../components/cta/PartnerListCTA.astro';
+---
+<ToolLayout
+  title={`San Diego Closing Cost Estimator | ${siteConfig.siteName}`}
+  description="Estimate your closing costs for buying a home in San Diego. Itemized breakdown by loan type including escrow, title, recording, and prepaid costs."
+  toolName="Closing Cost Estimator"
+>
+  <Fragment slot="tool">
+    <h1 class="text-h1 font-bold text-neutral-900 mb-3">San Diego Closing Cost Estimator</h1>
+    <p class="text-body-lg text-neutral-600 mb-6">
+      Get an itemized estimate of the costs you'll pay at closing. Most San Diego buyers see total closing costs of 2-5% of the purchase price.
+    </p>
+    <ClosingCostEstimator client:load />
+  </Fragment>
+
+  <h2>What are closing costs?</h2>
+  <p>
+    Closing costs are the fees and expenses you pay when finalizing your home purchase, beyond the down payment. In San Diego, these typically range from 2% to 5% of the purchase price, depending on your loan type and situation.
+  </p>
+
+  <h2>Breakdown of San Diego closing costs</h2>
+
+  <h3>Lender fees</h3>
+  <p>
+    <strong>Loan origination fee</strong> covers the lender's cost to process your loan. It typically ranges from 0% to 1% of the loan amount. Some lenders charge no origination fee but compensate with a slightly higher interest rate.
+  </p>
+  <p>
+    <strong>Appraisal</strong> is required by the lender to confirm the home's value supports the loan amount. In San Diego, expect to pay around $500 for a standard single-family appraisal.
+  </p>
+
+  <h3>Title and escrow</h3>
+  <p>
+    <strong>Title insurance</strong> protects against ownership disputes. The lender's policy is required; the owner's policy is optional but recommended. In California, it's customary for the seller to pay for the owner's title policy in Southern California, but this is negotiable.
+  </p>
+  <p>
+    <strong>Escrow fees</strong> cover the neutral third party who handles the transaction. In San Diego, escrow fees are typically split between buyer and seller.
+  </p>
+
+  <h3>Prepaid items</h3>
+  <p>
+    At closing, you'll prepay several months of property tax, a year of homeowner's insurance, and daily interest from your closing date to the end of the month. These aren't technically "fees" — they're costs you'd pay anyway, just collected upfront.
+  </p>
+
+  <h3>Loan-type-specific costs</h3>
+  <p>
+    <strong>FHA loans</strong> require an Upfront Mortgage Insurance Premium (UFMIP) of 1.75% of the loan amount, which is typically financed into the loan.
+  </p>
+  <p>
+    <strong>VA loans</strong> have a funding fee (2.15% for first-time use), which can also be financed. This fee is waived for veterans with a service-connected disability.
+  </p>
+
+  <h2>Ways to reduce closing costs</h2>
+  <ul>
+    <li>Negotiate seller credits (the seller pays some of your closing costs)</li>
+    <li>Ask about lender credits (higher rate in exchange for lower fees)</li>
+    <li>Use down payment assistance — some programs include closing cost grants</li>
+    <li>Shop around for title and escrow services</li>
+    <li>Close toward the end of the month to reduce prepaid interest</li>
+  </ul>
+
+  <div class="mt-8">
+    <PartnerListCTA context="A local mortgage professional can give you a detailed Loan Estimate with your actual closing costs." />
+  </div>
+</ToolLayout>

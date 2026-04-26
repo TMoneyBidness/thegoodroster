@@ -1,0 +1,68 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../config/site';
+import TrustBlock from '../components/trust/TrustBlock.astro';
+import LocalBusinessSchema from '../components/seo/LocalBusinessSchema.astro';
+---
+<PageLayout
+  title={`About | ${siteConfig.siteName}`}
+  description={`${siteConfig.siteName} helps homebuyers make sense of the mortgage side of buying a home in San Diego.`}
+  breadcrumbs={[{ label: 'About', href: '/about/' }]}
+>
+  <LocalBusinessSchema />
+
+  <article class="py-8 prose">
+    <h1>Getting mortgage help should feel like getting help</h1>
+
+    <p class="text-body-lg text-neutral-600">
+      TheGoodRoster helps homebuyers understand the mortgage side of buying a home. We publish local guides, explain loan and down-payment options, offer practical tools, and maintain a small roster of licensed mortgage professionals. Buyers can learn first, compare realistic paths, and choose one professional to contact when they are ready.
+    </p>
+
+    <p class="text-body font-medium text-primary-800">
+      One professional. Picked by you. When you're ready.
+    </p>
+
+    <h2>How it works</h2>
+    <p>
+      You explore at your own pace — read guides, run calculators, figure out what programs you might qualify for. When you're ready to talk to someone, you browse our <a href="/community-partners/">roster of local professionals</a>, pick the one whose specialty matches your situation, and connect directly.
+    </p>
+    <p>
+      <strong>No lender blast. No quote auction.</strong> Your inquiry goes only to the person you select.
+    </p>
+
+    <h2>What we provide</h2>
+    <ul>
+      <li>Plain-English guides written for San Diego's market</li>
+      <li>Interactive tools with local data — property tax rates, Mello-Roos, DPA program eligibility</li>
+      <li>A small roster of licensed professionals, each with a clear specialty</li>
+    </ul>
+
+    <h2>What we are not</h2>
+    <p>
+      TheGoodRoster is not a lender, mortgage broker, or loan originator. We do not negotiate loan terms, take loan applications, quote rates, or pre-qualify consumers. We do not handle any part of the mortgage transaction.
+    </p>
+
+    <h2>How the business works</h2>
+    <p>
+      Some listed professionals may pay to participate. Compensation does not decide who you contact — professionals are not ranked by who pays more, and you are never obligated to work with anyone.
+    </p>
+
+    <h2>Who maintains the content</h2>
+    <p>
+      All content is reviewed by {siteConfig.editorialAuthor.name}
+      {siteConfig.editorialAuthor.credential !== '[EDITORIAL_AUTHOR_CREDENTIAL]' && (
+        <>, {siteConfig.editorialAuthor.credential}</>
+      )}. We update program information quarterly and refresh market data as it becomes available. Sources are cited on every page.
+    </p>
+
+    <TrustBlock sources={['SDHC', 'CalHFA', 'San Diego County HCD', 'HUD']} />
+
+    <h2>Contact</h2>
+    <p>
+      Questions about the site, content corrections, or partnership inquiries: <a href="/contact/">contact us</a>.
+    </p>
+    <p>
+      For mortgage-specific questions, <a href="/community-partners/">choose a professional from our roster</a>.
+    </p>
+  </article>
+</PageLayout>

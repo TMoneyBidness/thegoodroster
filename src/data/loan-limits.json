@@ -1,0 +1,55 @@
+{
+  "lastUpdated": "2026-04-15",
+  "county": "San Diego County",
+  "countyFips": "06073",
+  "state": "California",
+  "limits": {
+    "fha": {
+      "year": 2026,
+      "singleFamily": 1077550,
+      "duplex": 1379800,
+      "triplex": 1667750,
+      "fourplex": 2073050,
+      "source": "HUD FHA Mortgage Limits",
+      "notes": "San Diego is a high-cost area, so FHA limits are at the ceiling. These limits apply to the total mortgage amount including the financed upfront MIP."
+    },
+    "conforming": {
+      "year": 2025,
+      "singleFamily": 766550,
+      "duplex": 981500,
+      "triplex": 1186350,
+      "fourplex": 1474400,
+      "source": "FHFA Conforming Loan Limits",
+      "notes": "2025 baseline conforming limit. San Diego County is at the standard limit. 2026 limits not yet announced — update when FHFA publishes (typically November). Loans above this amount require jumbo financing."
+    },
+    "va": {
+      "year": 2026,
+      "singleFamily": null,
+      "source": "Department of Veterans Affairs",
+      "notes": "No loan limit for veterans with full entitlement (no prior VA loans outstanding). Veterans with reduced entitlement may be subject to county limits matching the conforming limit. $0 down payment regardless of loan size with full entitlement."
+    },
+    "jumbo": {
+      "year": 2025,
+      "threshold": 766550,
+      "source": "Industry standard — any loan exceeding the conforming limit",
+      "notes": "Jumbo loans typically require 10-20% down payment, higher credit scores (700+), and larger cash reserves. Rates may be slightly higher than conforming. Not eligible for most DPA programs."
+    }
+  },
+  "calhfaIncomeLimits": {
+    "year": 2025,
+    "source": "CalHFA Income Limits by County",
+    "notes": "CalHFA income limits vary by program, county, and household size. These are approximate ranges for San Diego County. Always verify with a CalHFA-approved lender.",
+    "sanDiegoCounty": {
+      "myHome": {
+        "household1to2": 180000,
+        "household3plus": 210000,
+        "notes": "Approximate — actual limits vary. Check CalHFA income limit tables."
+      },
+      "dreamForAll": {
+        "household1to2": 236000,
+        "household3plus": 300000,
+        "notes": "Income limits vary by funding round. First-generation homebuyers may have different thresholds."
+      }
+    }
+  }
+}

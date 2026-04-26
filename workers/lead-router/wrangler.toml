@@ -1,0 +1,21 @@
+name = "sdhomestart-lead-router"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sdhomestart-leads"
+database_id = "" # Set via wrangler CLI after D1 creation
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "" # Set via Cloudflare dashboard
+
+# Secrets (set via `wrangler secret put`):
+# - WEBHOOK_AUTOMATION_URL
+# - WEBHOOK_AUTOMATION_SECRET
+# - TURNSTILE_SECRET_KEY
+
+[vars]
+ENVIRONMENT = "production"
+MAX_SUBMISSIONS_PER_IP_PER_HOUR = "3"

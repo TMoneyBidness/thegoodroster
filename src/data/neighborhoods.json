@@ -1,0 +1,167 @@
+{
+  "lastUpdated": "2026-04-15",
+  "source": "Approximate 2025-2026 median prices from Zillow, Redfin, and San Diego Association of Realtors",
+  "notes": "Median prices are approximate and fluctuate. Use these as starting points for affordability estimates, not as appraisals.",
+  "neighborhoods": [
+    {
+      "id": "city-heights",
+      "name": "City Heights",
+      "medianPrice": 580000,
+      "areaType": "entry_level",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.10,
+      "zipCodes": ["92105", "92104", "92115"]
+    },
+    {
+      "id": "encanto",
+      "name": "Encanto",
+      "medianPrice": 560000,
+      "areaType": "entry_level",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.10,
+      "zipCodes": ["92114", "92113"]
+    },
+    {
+      "id": "spring-valley",
+      "name": "Spring Valley",
+      "medianPrice": 620000,
+      "areaType": "entry_level",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.15,
+      "zipCodes": ["91977", "91978"]
+    },
+    {
+      "id": "el-cajon",
+      "name": "El Cajon",
+      "medianPrice": 640000,
+      "areaType": "entry_level",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.20,
+      "zipCodes": ["92019", "92020", "92021"]
+    },
+    {
+      "id": "national-city",
+      "name": "National City",
+      "medianPrice": 590000,
+      "areaType": "entry_level",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.15,
+      "zipCodes": ["91950"]
+    },
+    {
+      "id": "clairemont",
+      "name": "Clairemont",
+      "medianPrice": 850000,
+      "areaType": "mid_range",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.10,
+      "zipCodes": ["92117", "92111"]
+    },
+    {
+      "id": "mira-mesa",
+      "name": "Mira Mesa",
+      "medianPrice": 870000,
+      "areaType": "mid_range",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.20,
+      "zipCodes": ["92126"]
+    },
+    {
+      "id": "chula-vista",
+      "name": "Chula Vista",
+      "medianPrice": 760000,
+      "areaType": "mid_range",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": true,
+      "typicalPropertyTaxRate": 1.35,
+      "zipCodes": ["91910", "91911", "91913", "91914", "91915"]
+    },
+    {
+      "id": "santee",
+      "name": "Santee",
+      "medianPrice": 740000,
+      "areaType": "mid_range",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.20,
+      "zipCodes": ["92071"]
+    },
+    {
+      "id": "escondido",
+      "name": "Escondido",
+      "medianPrice": 700000,
+      "areaType": "mid_range",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.20,
+      "zipCodes": ["92025", "92026", "92027", "92029"]
+    },
+    {
+      "id": "hillcrest",
+      "name": "Hillcrest",
+      "medianPrice": 720000,
+      "areaType": "higher",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.10,
+      "zipCodes": ["92103"]
+    },
+    {
+      "id": "north-park",
+      "name": "North Park",
+      "medianPrice": 810000,
+      "areaType": "higher",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.10,
+      "zipCodes": ["92104"]
+    },
+    {
+      "id": "la-mesa",
+      "name": "La Mesa",
+      "medianPrice": 780000,
+      "areaType": "higher",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.20,
+      "zipCodes": ["91941", "91942"]
+    },
+    {
+      "id": "pacific-beach",
+      "name": "Pacific Beach",
+      "medianPrice": 1050000,
+      "areaType": "higher",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.10,
+      "zipCodes": ["92109"]
+    },
+    {
+      "id": "del-mar",
+      "name": "Del Mar",
+      "medianPrice": 2400000,
+      "areaType": "premium",
+      "inCityOfSanDiego": false,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.15,
+      "zipCodes": ["92014"]
+    },
+    {
+      "id": "la-jolla",
+      "name": "La Jolla",
+      "medianPrice": 2200000,
+      "areaType": "premium",
+      "inCityOfSanDiego": true,
+      "hasMelloRoos": false,
+      "typicalPropertyTaxRate": 1.10,
+      "zipCodes": ["92037"]
+    }
+  ]
+}
