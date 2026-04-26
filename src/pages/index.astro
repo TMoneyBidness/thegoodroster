@@ -5,6 +5,8 @@ import PrimaryCTA from '../components/cta/PrimaryCTA.astro';
 import ToolCTA from '../components/cta/ToolCTA.astro';
 import StickyMobileCTA from '../components/cta/StickyMobileCTA.astro';
 import KeyStatBlock from '../components/content/KeyStatBlock.astro';
+import NeighborhoodMap from '../components/content/NeighborhoodMap.tsx';
+import neighborhoodData from '../data/neighborhoods.json';
 ---
 <BaseLayout
   title={`Free San Diego Homebuyer Resource | ${siteConfig.siteName}`}
@@ -132,6 +134,17 @@ import KeyStatBlock from '../components/content/KeyStatBlock.astro';
           icon="currency"
         />
       </div>
+    </div>
+  </section>
+
+  <!-- ============ NEIGHBORHOOD MAP ============ -->
+  <section class="section-padding" style="background: white;">
+    <div class="container-content">
+      <h2 class="text-h2 font-bold text-primary-800 text-center mb-2">Where first-time buyers are buying in San Diego</h2>
+      <p class="text-body text-neutral-500 text-center mb-6 max-w-xl mx-auto">
+        Tap a neighborhood to see median prices, tax rates, and DPA eligibility.
+      </p>
+      <NeighborhoodMap client:visible neighborhoods={neighborhoodData.neighborhoods} />
     </div>
   </section>
 
