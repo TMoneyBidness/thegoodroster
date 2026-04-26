@@ -41,7 +41,7 @@ const { breadcrumbs = [], wide = false, ...layoutProps } = Astro.props;
     </>
   )}
 
-  <div class={wide ? 'container-content' : 'container-prose'}>
+  <div class={wide ? 'container-content' : 'container-content max-w-4xl mx-auto'}>
     <slot />
   </div>
 </BaseLayout>
