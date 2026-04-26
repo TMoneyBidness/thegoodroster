@@ -117,7 +117,7 @@ import partners from '../data/partners.json';
       <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
     </ul>
     <p>
-      To exercise any of these rights, please contact us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>. We will verify your identity before processing your request. We will respond to verifiable consumer requests within 45 calendar days of receipt. If we require additional time (up to an additional 45 days), we will inform you of the reason and the extension period in writing.
+      To exercise any of these rights, please contact us at <a href={`mailto:${siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}`}>{siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}</a>. We will verify your identity before processing your request. We will respond to verifiable consumer requests within 45 calendar days of receipt. If we require additional time (up to an additional 45 days), we will inform you of the reason and the extension period in writing.
     </p>
 
     <h3>Do Not Sell My Personal Information</h3>
@@ -125,7 +125,7 @@ import partners from '../data/partners.json';
       Under the CCPA, the sharing of your contact and financial profile data with third-party mortgage professionals — as described in Section 3 of this policy — may constitute a "sale" of personal information. We want to be transparent about this practice. We honor Global Privacy Control (GPC) signals automatically.
     </p>
     <p>
-      <strong>You have the right to opt out of this sale/sharing.</strong> To exercise this right, please email us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a> with the subject line "Do Not Sell My Personal Information." Include the name and email address associated with your submission so we can locate your records.
+      <strong>You have the right to opt out of this sale/sharing.</strong> To exercise this right, please email us at <a href={`mailto:${siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}`}>{siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}</a> with the subject line "Do Not Sell My Personal Information." Include the name and email address associated with your submission so we can locate your records.
     </p>
     <p>
       If you opt out, we will not share any future form submissions with third-party mortgage professionals. Please note that opting out does not affect data that has already been shared prior to your request. If you have already been contacted by a mortgage professional, you will need to contact that professional directly regarding their use of your information.
@@ -156,7 +156,7 @@ import partners from '../data/partners.json';
     <!-- ============================================================ -->
     <h2>8. Children's Privacy</h2>
     <p>
-      Our Site is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to promptly delete that information. If you believe that a child under 13 has provided us with personal information, please contact us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
+      Our Site is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to promptly delete that information. If you believe that a child under 13 has provided us with personal information, please contact us at <a href={`mailto:${siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}`}>{siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}</a>.
     </p>
 
     <!-- ============================================================ -->
@@ -171,7 +171,7 @@ import partners from '../data/partners.json';
       If you have questions or concerns about this Privacy Policy or our data practices, please contact us:
     </p>
     <ul>
-      <li><strong>Email:</strong> <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a></li>
+      <li><strong>Email:</strong> <a href={`mailto:${siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}`}>{siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}</a></li>
       <li><strong>Organization:</strong> {siteConfig.companyName}</li>
     </ul>
   </article>

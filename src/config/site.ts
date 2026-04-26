@@ -34,6 +34,8 @@ export const siteConfig = {
 
   notALenderDisclaimer: `${import.meta.env.PUBLIC_SITE_NAME || '[SITE_NAME]'} is a directory and marketing service. We are not a mortgage lender, mortgage broker, or loan originator. We do not negotiate loan terms, take loan applications, quote rates, or pre-qualify consumers.`,
 
+  partnerDisclaimer: 'We do not endorse or recommend any listed professional. Listing does not constitute an endorsement. You are not required to use any listed professional.',
+
   partnerPageDisclaimer: `When you submit an inquiry through this site, your contact information goes only to the one Community Partner you select — never to a network, never to multiple lenders, and never to marketing partners. We do not steer, rank, or rotate inquiries based on which Community Partner pays more. Each Community Partner pays a flat marketing fee per inquiry, regardless of whether a loan closes. This fee is for advertising and directory placement and is not contingent on any settlement service.`,
 
   compensationDisclosure: 'We may receive compensation when you connect with a listed professional.',

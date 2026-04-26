@@ -49,7 +49,7 @@ import LocalBusinessSchema from '../components/seo/LocalBusinessSchema.astro';
 
     <h2>Who maintains the content</h2>
     <p>
-      All content is reviewed by {siteConfig.editorialAuthor.name}
+      All content is reviewed by {siteConfig.editorialAuthor.name !== '[EDITORIAL_AUTHOR_NAME]' ? siteConfig.editorialAuthor.name : 'our editorial team'}
       {siteConfig.editorialAuthor.credential !== '[EDITORIAL_AUTHOR_CREDENTIAL]' && (
         <>, {siteConfig.editorialAuthor.credential}</>
       )}. We update program information quarterly and refresh market data as it becomes available. Sources are cited on every page.

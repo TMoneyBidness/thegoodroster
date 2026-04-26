@@ -22,7 +22,7 @@ import { siteConfig } from '../config/site';
         Use this form for general feedback, content corrections, partnership inquiries, or questions about {siteConfig.siteName}.
       </p>
 
-      <form class="space-y-5" action="/api/contact" method="POST">
+      <form class="space-y-5" action={`mailto:${siteConfig.contactEmail}`} method="POST" enctype="text/plain">
         <div>
           <label for="contact-name" class="block text-body-sm font-medium text-neutral-700 mb-1">Name</label>
           <input

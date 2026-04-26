@@ -10,11 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_BIA_NAME: "SDHomeStart"
-      PUBLIC_BIA_DISTRICT: "San Diego"
-      PUBLIC_SITE_URL: "https://sdhomestart.org"
-      PUBLIC_SITE_NAME: "SDHomeStart"
-      PUBLIC_EDITORIAL_AUTHOR_NAME: "SDHomeStart Team"
+      PUBLIC_COMPANY_NAME: "TheGoodRoster"
+      PUBLIC_SITE_URL: "https://thegoodroster.com"
+      PUBLIC_SITE_NAME: "TheGoodRoster"
+      PUBLIC_EDITORIAL_AUTHOR_NAME: "TheGoodRoster Team"
       PUBLIC_EDITORIAL_AUTHOR_CREDENTIAL: ""
     steps:
       - uses: actions/checkout@v4
