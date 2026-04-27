@@ -1,12 +1,8 @@
 ---
-/**
- * DPA Finder Tool Page
- * Note: The interactive DPA Finder component is Phase 2.
- * For now, this page links to the DPA Hub which has the full comparison table.
- */
 import ToolLayout from '../../layouts/ToolLayout.astro';
 import { siteConfig } from '../../config/site';
-import PrimaryCTA from '../../components/cta/PrimaryCTA.astro';
+import DPAFinderQuiz from '../../components/tools/DPAFinderQuiz.tsx';
+import dpaData from '../../data/dpa-programs.json';
 ---
 <ToolLayout
   title={`Find Your Down Payment Assistance Match | ${siteConfig.siteName}`}
@@ -16,20 +12,19 @@ import PrimaryCTA from '../../components/cta/PrimaryCTA.astro';
   <Fragment slot="tool">
     <h1 class="text-h1 font-bold text-neutral-900 mb-3">Find Your Down Payment Assistance Match</h1>
     <p class="text-body-lg text-neutral-600 mb-6">
-      San Diego has over 7 down payment assistance programs offering $10,000 to $150,000 in help. See which ones you may qualify for.
+      San Diego has 7+ DPA programs offering $10,000 to $150,000 in help. Answer 6 questions to see which ones fit your situation. No email or phone number required.
     </p>
 
-    <!-- Phase 2: Interactive DPA Finder will go here -->
-    <div class="bg-primary-50 border border-primary-200 rounded-xl p-8 text-center">
-      <p class="text-body text-neutral-700 mb-4">
-        Our interactive DPA Finder tool is coming soon. In the meantime, browse all available programs on our comprehensive guide page.
-      </p>
-      <PrimaryCTA text="Browse All DPA Programs" href="/down-payment-assistance-san-diego/" />
+    <div class="max-w-xl">
+      <DPAFinderQuiz client:load programs={dpaData.programs} />
     </div>
   </Fragment>
 
   <h2>About down payment assistance in San Diego</h2>
   <p>
-    Down payment is the #1 barrier for first-time homebuyers in San Diego. But many buyers don't know that between city, county, and state programs, significant assistance is available. Visit our <a href="/down-payment-assistance-san-diego/">complete DPA guide</a> for details on every program.
+    Down payment is the #1 barrier for first-time homebuyers in San Diego. But many buyers don't know that between city, county, and state programs, significant assistance is available — from $10,000 grants to $150,000 shared-appreciation loans.
+  </p>
+  <p>
+    This tool uses publicly available program guidelines to estimate which programs you may qualify for. For a precise assessment, a licensed mortgage professional can review your full financial profile. Visit our <a href="/down-payment-assistance-san-diego/">complete DPA guide</a> for detailed program breakdowns.
   </p>
 </ToolLayout>

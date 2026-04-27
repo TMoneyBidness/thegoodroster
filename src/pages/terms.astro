@@ -1,8 +1,4 @@
 ---
-/**
- * Terms of Use
- * TODO: pending legal review — full terms of use needs lawyer drafting.
- */
 import PageLayout from '../layouts/PageLayout.astro';
 import { siteConfig } from '../config/site';
 ---
@@ -10,26 +6,22 @@ import { siteConfig } from '../config/site';
   title={`Terms of Use | ${siteConfig.siteName}`}
   description={`Terms of use for ${siteConfig.siteName}, operated by ${siteConfig.companyName}.`}
   breadcrumbs={[{ label: 'Terms of Use', href: '/terms/' }]}
+  noindex={true}
 >
   <article class="py-8 prose">
     <h1>Terms of Use</h1>
 
-    <div class="bg-accent-50 border border-accent-200 rounded-lg p-6 not-prose mb-8">
-      <p class="font-semibold text-neutral-800 mb-2">Content Pending Legal Review</p>
-      <p class="text-body-sm text-neutral-600">
-        This page's full content is being prepared by legal counsel.
-      </p>
-      <!-- TODO: pending legal review — replace this entire page body with lawyer-drafted terms of use -->
-    </div>
-
-    <h2>About this site</h2>
     <p>
       {siteConfig.siteName} is an educational website operated by {siteConfig.companyName}.
       This site is not a lender, broker, or financial advisor. All information is provided
       for educational purposes only and should not be considered financial advice.
     </p>
     <p>
-      If you have questions about these terms, please <a href="/contact/">contact us</a>.
+      For details about how we handle your data, see our <a href="/privacy/">Privacy Policy</a>.
+      For information about our relationship with listed mortgage professionals, see our <a href="/disclaimers/">Disclaimers</a> page.
+    </p>
+    <p>
+      If you have questions, please <a href="/contact/">contact us</a>.
     </p>
   </article>
 </PageLayout>

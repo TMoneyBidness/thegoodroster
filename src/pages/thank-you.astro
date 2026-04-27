@@ -15,9 +15,9 @@ import ToolCTA from '../components/cta/ToolCTA.astro';
       </svg>
     </div>
 
-    <h1 class="text-h1 font-bold text-neutral-900 mb-4">Thank you for reaching out</h1>
+    <h1 class="text-h1 font-bold text-neutral-900 mb-4">Done. Here's what happens next.</h1>
     <p class="text-body-lg text-neutral-600 mb-8">
-      Your information has been submitted. Here's what happens next.
+      Your inquiry has been sent to the professional you selected — and only to them.
     </p>
 
     <!-- What happens next -->
@@ -27,8 +27,8 @@ import ToolCTA from '../components/cta/ToolCTA.astro';
         <li class="flex gap-4">
           <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-body-sm">1</span>
           <div>
-            <p class="font-medium text-neutral-800">We forward your information</p>
-            <p class="text-body-sm text-neutral-500">Your details are shared with a local mortgage professional from our {siteConfig.partnerTerminology.toLowerCase()} network.</p>
+            <p class="font-medium text-neutral-800">Your info is delivered</p>
+            <p class="text-body-sm text-neutral-500">Your details have been securely sent to the one professional you chose. No one else receives your information.</p>
           </div>
         </li>
         <li class="flex gap-4">
@@ -48,17 +48,25 @@ import ToolCTA from '../components/cta/ToolCTA.astro';
       </ol>
     </div>
 
+    <!-- Co-buyer forward prompt -->
+    <div class="bg-accent-50 border border-accent-200 rounded-xl p-6 mb-8 text-left">
+      <h2 class="text-h3 font-semibold text-primary-800 mb-2">One thing to do in the next 5 minutes</h2>
+      <p class="text-body-sm text-neutral-600 mb-3">
+        If you're buying with a partner or co-buyer, forward them the link to your <a href="/tools/dpa-finder/" class="text-accent-600 font-medium">DPA Match results</a>. They'll see the same programs and can ask the professional their own questions on the intro call.
+      </p>
+    </div>
+
     <!-- While you wait -->
-    <h2 class="text-h3 font-semibold text-neutral-800 mb-4">While you wait, explore these resources</h2>
+    <h2 class="text-h3 font-semibold text-neutral-800 mb-4">While you wait</h2>
     <div class="grid md:grid-cols-2 gap-4 text-left">
       <ToolCTA
-        title="First-Time Buyer Guide"
-        description="Our complete guide to buying your first home in San Diego"
-        href="/first-time-homebuyer-san-diego/"
+        title="Your DPA Match"
+        description="Re-run the quiz or share it with your co-buyer"
+        href="/tools/dpa-finder/"
       />
       <ToolCTA
-        title="Down Payment Assistance"
-        description="Learn about programs that could help with your down payment"
+        title="Down Payment Assistance Guide"
+        description="Deep dive into each DPA program's eligibility and details"
         href="/down-payment-assistance-san-diego/"
       />
     </div>

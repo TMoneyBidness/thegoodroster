@@ -8,21 +8,20 @@ import { siteConfig } from '../config/site';
   breadcrumbs={[{ label: 'Workshops', href: '/workshops/' }]}
 >
   <div class="py-8 max-w-2xl">
-    <h1 class="text-h1 font-bold text-neutral-900 mb-4">Free Homebuyer Workshops</h1>
+    <h1 class="text-h1 font-bold text-neutral-900 mb-4">Free San Diego First-Time Homebuyer Workshops</h1>
     <p class="text-body-lg text-neutral-600 mb-8">
-      {siteConfig.companyName} hosts free first-time homebuyer workshops for San Diego residents.
-      Learn about loan programs, down payment assistance, and the homebuying process from local experts.
+      Live workshops for San Diego first-time buyers covering DPA programs, loan options, and the step-by-step buying process.
     </p>
 
     <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-8 text-center mb-8">
-      <h2 class="text-h3 font-semibold text-neutral-800 mb-3">Coming Soon</h2>
+      <h2 class="text-h3 font-semibold text-neutral-800 mb-3">Next Round Coming Soon</h2>
       <p class="text-body text-neutral-600 mb-4">
-        Workshop schedule and RSVP system are being set up. Check back soon for upcoming events.
+        We host one workshop per quarter, capped at 50 seats. Check back for the next round, or explore our free tools now.
       </p>
-      <p class="text-body-sm text-neutral-500">
-        In the meantime, explore our <a href="/first-time-homebuyer-san-diego/">complete homebuyer guide</a>
-        and <a href="/tools/">free tools</a>.
-      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
+        <a href="/tools/dpa-finder/" class="btn-primary no-underline">Find My DPA Match</a>
+        <a href="/first-time-homebuyer-san-diego/" class="btn-secondary no-underline">Read the Buyer Guide</a>
+      </div>
     </div>
   </div>
 </PageLayout>

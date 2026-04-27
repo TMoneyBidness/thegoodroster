@@ -4,7 +4,6 @@
  */
 import PageLayout from '../layouts/PageLayout.astro';
 import { siteConfig } from '../config/site';
-import partners from '../data/partners.json';
 ---
 <PageLayout
   title={`Privacy Policy | ${siteConfig.siteName}`}
@@ -67,7 +66,7 @@ import partners from '../data/partners.json';
     <!-- ============================================================ -->
     <h2>3. How We Share Your Information</h2>
     <p>
-      <strong>We share and may sell your personal information with third-party licensed mortgage professionals.</strong> This is a core function of our Site. When you submit your information through our readiness quiz, contact form, or other lead-generation tools, we share the following data with one or more participating mortgage professionals:
+      <strong>We share your personal information with the specific third-party licensed mortgage professional you select.</strong> This is a core function of our Site. When you submit your information through our contact forms or interactive tools, we share the following data with the one Community Partner you choose:
     </p>
     <ul>
       <li>Your name, email address, and phone number</li>
@@ -79,17 +78,10 @@ import partners from '../data/partners.json';
     </p>
 
     <h3>Recipients</h3>
-    <p>The Community Partners who may receive your information are:</p>
-    <ul>
-      {partners.map((p) => (
-        <li>
-          <strong>{p.name}</strong> (NMLS #{p.nmls}), {p.legalEntityName} (Entity NMLS #{p.entityNmls}), {p.address}
-        </li>
-      ))}
-    </ul>
+    <p>A current list of Community Partners is available at <a href="/community-partners/">/community-partners/</a>. Your information is shared only with the one Community Partner you select — never with multiple professionals, a network, or an aggregator.</p>
 
     <p>
-      We do not share your information with the other Community Partners you did not select, with any other mortgage professional, with a network or aggregator of lenders, or with marketing partners for purposes of mortgage solicitation.
+      We do not share your information with any Community Partner you did not select, with any other mortgage professional, with a network or aggregator of lenders, or with marketing partners for purposes of mortgage solicitation.
     </p>
 
     <p>
@@ -122,7 +114,7 @@ import partners from '../data/partners.json';
 
     <h3>Do Not Sell My Personal Information</h3>
     <p>
-      Under the CCPA, the sharing of your contact and financial profile data with third-party mortgage professionals — as described in Section 3 of this policy — may constitute a "sale" of personal information. We want to be transparent about this practice. We honor Global Privacy Control (GPC) signals automatically.
+      Under the CCPA, the sharing of your contact and financial profile data with the Community Partner you select — as described in Section 3 of this policy — may constitute a "sale" of personal information. We want to be transparent about this practice. We honor Global Privacy Control (GPC) signals automatically.
     </p>
     <p>
       <strong>You have the right to opt out of this sale/sharing.</strong> To exercise this right, please email us at <a href={`mailto:${siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}`}>{siteConfig.contactEmail !== '[CONTACT_EMAIL]' ? siteConfig.contactEmail : 'contact@thegoodroster.com'}</a> with the subject line "Do Not Sell My Personal Information." Include the name and email address associated with your submission so we can locate your records.

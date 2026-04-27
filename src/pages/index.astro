@@ -29,16 +29,25 @@ import neighborhoodData from '../data/neighborhoods.json';
   <!-- ============ HERO ============ -->
   <section class="section-padding" style="background: linear-gradient(135deg, var(--color-neutral-100) 0%, var(--color-neutral-50) 40%, var(--color-accent-50) 100%);">
     <div class="container-content">
-      <div class="max-w-3xl mx-auto text-center">
+      <div class="max-w-5xl mx-auto text-center">
         <h1 class="text-display font-bold text-primary-900 mb-5">
-          First-time homebuyer in San Diego? Start before you talk to anyone.
+          Most San Diego first-time buyers think they don't qualify for down payment help. They're wrong.
         </h1>
-        <p class="text-body-lg text-neutral-600 mb-6 max-w-2xl mx-auto">
-          Free affordability calculator, closing cost estimates, and plain-English loan program guides. When you're ready, you pick one licensed local pro — and your inquiry goes only to them. No call lists. No quote auctions.
-        </p>
+        <div class="mb-8 max-w-2xl mx-auto space-y-3">
+          <p class="text-2xl sm:text-3xl font-bold text-primary-800">$10,000 to $150,000</p>
+          <p class="text-body-lg text-neutral-600">That's what San Diego's 7 DPA programs offer first-time buyers.</p>
+          <div class="flex items-center justify-center gap-3 text-body text-neutral-500">
+            <span>60 seconds</span>
+            <span class="text-neutral-300">|</span>
+            <span>12 questions</span>
+            <span class="text-neutral-300">|</span>
+            <span>Your top 3 programs</span>
+          </div>
+          <p class="text-body-sm text-neutral-400">No email. No phone number. No catch.</p>
+        </div>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <PrimaryCTA text="See what you can afford" href="/tools/affordability-calculator/" size="large" variant="accent" />
-          <a href="/loan-programs/" class="btn-secondary">Or browse loan programs</a>
+          <PrimaryCTA text="Show Me My 3 Programs" href="/tools/dpa-finder/" size="large" variant="accent" />
+          <a href="/down-payment-assistance-san-diego/" class="btn-secondary">Or browse all 7 DPA programs</a>
         </div>
       </div>
     </div>
@@ -59,7 +68,7 @@ import neighborhoodData from '../data/neighborhoods.json';
           <p class="text-body-sm text-neutral-500">Understand your options before talking to anyone</p>
         </a>
 
-        <a href="/down-payment-assistance-san-diego/" class="card group block text-center no-underline hover:border-warm-300">
+        <a href="/tools/dpa-finder/" class="card group block text-center no-underline hover:border-warm-300">
           <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-warm-50 flex items-center justify-center text-warm-500 group-hover:bg-warm-100 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -107,9 +116,9 @@ import neighborhoodData from '../data/neighborhoods.json';
   <!-- ============ FEATURED TOOLS ============ -->
   <section class="section-padding bg-white">
     <div class="container-content">
-      <h2 class="text-h2 font-bold text-primary-800 text-center mb-3">Free calculators, estimators, and checklists</h2>
+      <h2 class="text-h2 font-bold text-primary-800 text-center mb-3">Free calculators — run your numbers in 60 seconds</h2>
       <p class="text-body text-neutral-500 text-center mb-6 max-w-xl mx-auto">
-        To help you understand your next step. Built with San Diego property tax, Mello-Roos, and DPA data.
+        Built with San Diego property tax rates, Mello-Roos data, and DPA program eligibility. No account needed.
       </p>
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         <ToolCTA
@@ -137,9 +146,9 @@ import neighborhoodData from '../data/neighborhoods.json';
   <!-- ============ NEIGHBORHOOD MAP ============ -->
   <section class="section-padding" style="background: var(--color-neutral-100);">
     <div class="container-content">
-      <h2 class="text-h2 font-bold text-primary-800 text-center mb-3">Where first-time buyers are buying in San Diego</h2>
+      <h2 class="text-h2 font-bold text-primary-800 text-center mb-3">See what $150K in DPA looks like in your target neighborhood</h2>
       <p class="text-body text-neutral-500 text-center mb-6 max-w-xl mx-auto">
-        Tap a neighborhood to see median prices, tax rates, and DPA eligibility.
+        Tap a neighborhood to see median prices, tax rates, and which DPA programs apply there.
       </p>
       <NeighborhoodMap client:visible neighborhoods={neighborhoodData.neighborhoods} />
     </div>
@@ -166,15 +175,15 @@ import neighborhoodData from '../data/neighborhoods.json';
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
+  <!-- ============ ONE-INQUIRY GUARANTEE ============ -->
   <section class="section-padding bg-white">
     <div class="container-content max-w-3xl mx-auto text-center">
-      <h2 class="text-h2 font-bold text-primary-800 mb-4">Getting mortgage help should feel like getting help</h2>
+      <h2 class="text-h2 font-bold text-primary-800 mb-4">Your info goes to one pro. Never to a network.</h2>
       <p class="text-body text-neutral-600 mb-4">
-        Buying a home is already complicated. Finding someone to talk to should not be. TheGoodRoster helps you understand your options and choose one local expert when you're ready.
+        On other sites, submitting your info triggers calls from 3-8 lenders. Here, you pick one licensed local professional and your inquiry goes only to them. If anyone you didn't choose contacts you, we'll PayPal you $100.
       </p>
-      <p class="text-body-sm text-neutral-500 mb-6">
-        One expert. Picked by you. When you're ready.
+      <p class="text-body-sm font-semibold text-accent-600 mb-6">
+        One pro. Picked by you. $100 anti-spam guarantee.
       </p>
       <a href="/about/" class="text-accent-600 font-medium hover:text-accent-700">Learn more about how this works</a>
     </div>

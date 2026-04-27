@@ -133,8 +133,7 @@ export default function PartnerConnectForm({ partnerId, partnerName, partnerNmls
         </label>
         <p className="text-xs text-neutral-400 mt-2 pl-8">
           By submitting, you agree to our{' '}
-          <a href="/privacy/" className="underline">Privacy Policy</a> and{' '}
-          <a href="/terms/" className="underline">Terms of Use</a>.
+          <a href="/privacy/" className="underline">Privacy Policy</a>.
           {' '}<span className="font-medium">{partnerName}</span> is not affiliated with this site.
         </p>
       </div>

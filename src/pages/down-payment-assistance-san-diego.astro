@@ -87,15 +87,14 @@ const faqItems = [
 
     <!-- Above the fold -->
     <header class="mb-10">
-      <h1 class="mb-4">Down Payment Assistance Programs in San Diego County</h1>
+      <h1 class="mb-4">$10K to $150K in San Diego Down Payment Help — See Which Programs You Qualify For</h1>
 
       <p class="text-body-lg text-neutral-600 mb-4">
-        <strong>$10,000 to $150,000 in down payment help</strong> may be available to you. San Diego offers
-        more assistance programs than almost any other city in California.
+        San Diego offers <strong>7+ down payment assistance programs</strong> across city, county, and state agencies. Answer 6 questions to see your matches instantly — no email or phone number needed.
       </p>
 
       <div class="mb-4">
-        <PrimaryCTA text="Use the DPA Finder Tool" href="/tools/dpa-finder/" size="large" />
+        <PrimaryCTA text="Find My DPA Match — 60 Seconds" href="/tools/dpa-finder/" size="large" />
       </div>
 
       <TrustBlock sources={["SDHC", "CalHFA", "San Diego County HCD"]} />
@@ -194,7 +193,6 @@ const faqItems = [
             incomeLimit="≤80% AMI (~$82,000 for family of 4)"
             requiresFTHB={true}
             highlight={true}
-            detailUrl="/loan-programs/sdhc-low-income/"
           />
 
           <ProgramCard
@@ -205,7 +203,6 @@ const faqItems = [
             incomeLimit="80–150% AMI (~$82K–$154K for family of 4)"
             requiresFTHB={true}
             highlight={true}
-            detailUrl="/loan-programs/sdhc-middle-income/"
           />
 
           <ProgramCard
@@ -215,7 +212,6 @@ const faqItems = [
             geography="Unincorporated SD County and participating cities (not City of SD)"
             incomeLimit="≤80% AMI (~$82,000 for family of 4)"
             requiresFTHB={true}
-            detailUrl="/loan-programs/county-dcca-calhome/"
           />
 
           <ProgramCard
@@ -225,7 +221,6 @@ const faqItems = [
             geography="Statewide — works anywhere in San Diego County"
             incomeLimit="Varies by county and household size"
             requiresFTHB={true}
-            detailUrl="/loan-programs/calhfa-myhome/"
           />
 
           <ProgramCard
@@ -236,8 +231,14 @@ const faqItems = [
             incomeLimit="Varies by county and household size"
             requiresFTHB={true}
             highlight={true}
-            detailUrl="/loan-programs/calhfa-dream-for-all/"
           />
+
+          <!-- Dream For All scarcity callout -->
+          <div class="bg-warm-50 border border-warm-200 rounded-lg p-4 -mt-2 mb-2">
+            <p class="text-body-sm text-warm-700 font-medium">
+              <strong>Dream For All funds are lottery-based and run out in hours.</strong> First-generation homebuyers get priority. Check CalHFA's website for the next funding round, or <a href="/tools/dpa-finder/" class="text-accent-600 font-semibold">run your DPA match</a> to see if you're eligible before the next round opens.
+            </p>
+          </div>
 
           <ProgramCard
             name="GSFA Platinum"
@@ -246,7 +247,6 @@ const faqItems = [
             geography="Statewide — works anywhere in San Diego County"
             incomeLimit="Varies by county"
             requiresFTHB={false}
-            detailUrl="/loan-programs/gsfa-platinum/"
           />
 
           <ProgramCard
@@ -256,7 +256,6 @@ const faqItems = [
             geography="San Diego County"
             incomeLimit="≤120% AMI (~$123,000 for family of 4)"
             requiresFTHB={true}
-            detailUrl="/loan-programs/sd-black-homebuyers/"
           />
         </div>
       </section>
@@ -451,7 +450,7 @@ const faqItems = [
             Answer a few questions about your income, savings, and where you want to buy.
             Our DPA Finder tool matches you with every program you may be eligible for.
           </p>
-          <PrimaryCTA text="Use the DPA Finder Tool" href="/tools/dpa-finder/" size="large" />
+          <PrimaryCTA text="Find My DPA Match — 60 Seconds" href="/tools/dpa-finder/" size="large" />
         </div>
 
         <PartnerListCTA context="Need help navigating these programs? Connect with a San Diego mortgage professional who specializes in down payment assistance." />

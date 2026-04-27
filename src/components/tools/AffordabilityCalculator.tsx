@@ -410,7 +410,7 @@ export default function AffordabilityCalculator() {
               href="/tools/dpa-finder/"
               className="inline-block bg-accent-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-accent-700 transition-colors text-sm"
             >
-              Use the DPA Finder
+              Find My DPA Match
             </a>
           </div>
         </div>

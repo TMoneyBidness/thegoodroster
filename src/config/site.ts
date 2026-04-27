@@ -12,13 +12,13 @@ export const siteConfig = {
 
   // --- Editorial ---
   editorialAuthor: {
-    name: import.meta.env.PUBLIC_EDITORIAL_AUTHOR_NAME || '[EDITORIAL_AUTHOR_NAME]',
-    credential: import.meta.env.PUBLIC_EDITORIAL_AUTHOR_CREDENTIAL || '[EDITORIAL_AUTHOR_CREDENTIAL]',
+    name: import.meta.env.PUBLIC_EDITORIAL_AUTHOR_NAME || 'TheGoodRoster Editorial Team',
+    credential: import.meta.env.PUBLIC_EDITORIAL_AUTHOR_CREDENTIAL || '',
   },
 
   // --- Contact ---
-  contactEmail: import.meta.env.PUBLIC_CONTACT_EMAIL || '[CONTACT_EMAIL]',
-  contactPhone: import.meta.env.PUBLIC_CONTACT_PHONE || '[CONTACT_PHONE]',
+  contactEmail: import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@thegoodroster.com',
+  contactPhone: import.meta.env.PUBLIC_CONTACT_PHONE || '',
 
   // --- Analytics ---
   ga4MeasurementId: import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || '',
@@ -32,7 +32,7 @@ export const siteConfig = {
   partnerTerminology: 'Community Partners',
   partnerTerminologyPlural: 'Licensed Mortgage Professionals',
 
-  notALenderDisclaimer: `${import.meta.env.PUBLIC_SITE_NAME || '[SITE_NAME]'} is a directory and marketing service. We are not a mortgage lender, mortgage broker, or loan originator. We do not negotiate loan terms, take loan applications, quote rates, or pre-qualify consumers.`,
+  notALenderDisclaimer: `${import.meta.env.PUBLIC_SITE_NAME || 'TheGoodRoster'} is a directory and marketing service. We are not a mortgage lender, mortgage broker, or loan originator. We do not negotiate loan terms, take loan applications, quote rates, or pre-qualify consumers.`,
 
   partnerDisclaimer: 'We do not endorse or recommend any listed professional. Listing does not constitute an endorsement. You are not required to use any listed professional.',
 
@@ -46,7 +46,7 @@ export const siteConfig = {
   // Generic TCPA consent for the quiz (names all three partners inline)
   tcpaQuizConsent: `By clicking "Submit" below, I provide my electronic (E-SIGN) signature and prior express written consent for the Community Partners listed at {SITE_URL}/community-partners/ to contact me at the phone number and email I provided regarding mortgage products and services, including through the use of an automatic telephone dialing system, an artificial or prerecorded voice, AI-generated voice, and SMS/MMS text messages, even if my number is on a state, federal, or corporate Do-Not-Call list. My consent is not required as a condition of any purchase. I may revoke consent at any time by replying STOP.`,
 
-  formLegalText: 'By submitting, you agree to our Privacy Policy and Terms of Use.',
+  formLegalText: 'By submitting, you agree to our Privacy Policy.',
 
   // --- CCPA ---
   ccpaOptOutUrl: '/privacy/#do-not-sell',
@@ -85,7 +85,6 @@ export const siteConfig = {
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy/' },
-      { label: 'Terms of Use', href: '/terms/' },
       { label: 'Disclaimers', href: '/disclaimers/' },
       { label: 'Your Privacy Choices', href: '/privacy/#do-not-sell' },
     ],
@@ -97,7 +96,7 @@ export const siteConfig = {
     homeInsuranceAnnual: 1500,
     defaultMelloRoos: 0,
     fhaLoanLimit: 1077550,
-    conformingLoanLimit: 766550,
+    conformingLoanLimit: 1104000,
     medianHomePrice: 1000000,
   },
 } as const;

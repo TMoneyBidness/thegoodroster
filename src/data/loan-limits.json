@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-15",
+  "lastUpdated": "2026-04-26",
   "county": "San Diego County",
   "countyFips": "06073",
   "state": "California",
@@ -14,13 +14,13 @@
       "notes": "San Diego is a high-cost area, so FHA limits are at the ceiling. These limits apply to the total mortgage amount including the financed upfront MIP."
     },
     "conforming": {
-      "year": 2025,
-      "singleFamily": 766550,
-      "duplex": 981500,
-      "triplex": 1186350,
-      "fourplex": 1474400,
+      "year": 2026,
+      "singleFamily": 1104000,
+      "duplex": 1412800,
+      "triplex": 1707750,
+      "fourplex": 2122200,
       "source": "FHFA Conforming Loan Limits",
-      "notes": "2025 baseline conforming limit. San Diego County is at the standard limit. 2026 limits not yet announced — update when FHFA publishes (typically November). Loans above this amount require jumbo financing."
+      "notes": "2026 conforming loan limit for San Diego County (high-cost area). Source: FHFA 2026 county list. Loans above this amount require jumbo financing."
     },
     "va": {
       "year": 2026,
@@ -29,8 +29,8 @@
       "notes": "No loan limit for veterans with full entitlement (no prior VA loans outstanding). Veterans with reduced entitlement may be subject to county limits matching the conforming limit. $0 down payment regardless of loan size with full entitlement."
     },
     "jumbo": {
-      "year": 2025,
-      "threshold": 766550,
+      "year": 2026,
+      "threshold": 1104000,
       "source": "Industry standard — any loan exceeding the conforming limit",
       "notes": "Jumbo loans typically require 10-20% down payment, higher credit scores (700+), and larger cash reserves. Rates may be slightly higher than conforming. Not eligible for most DPA programs."
     }

@@ -114,12 +114,12 @@ export default function PreQualQuiz() {
 
     try {
       const payload = {
-        journey_stage: data.journey,
-        zip_code: data.zipCode,
-        first_time_buyer: data.firstTimeBuyer === 'yes',
-        military: data.military === 'yes',
+        timeline: data.journey,
+        zip: data.zipCode,
+        is_first_time_buyer: data.firstTimeBuyer === 'yes',
+        is_military: data.military === 'yes',
         income_range: data.income,
-        credit_score_range: data.creditScore,
+        credit_range: data.creditScore,
         down_payment_range: data.downPayment,
         name: data.name,
         email: data.email,
@@ -536,13 +536,6 @@ export default function PreQualQuiz() {
                         className="underline hover:text-accent-600"
                       >
                         Privacy Policy
-                      </a>{' '}
-                      and{' '}
-                      <a
-                        href="/terms/"
-                        className="underline hover:text-accent-600"
-                      >
-                        Terms of Use
                       </a>
                       .
                     </p>
